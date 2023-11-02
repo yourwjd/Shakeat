@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>SHAKEAT</title>
+</head>
+
+<body>
+    <header id="header">
+        <a href="#"><img src="./img/logo.png" alt="로고"></a>
+        <nav>
+            <ul>
+                <li><a href="#">VIDEO</a></li>
+                <li><a href="#">PLANNING</a></li>
+                <li><a href="#">SERVICE</a></li>
+                <li><a href="#">DESIGN</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="wrap">
+
+        <button id="scroll-to-top-button">
+            TOP
+        </button>
+    
+        <section id="main">
+            <img id="m-1" src="./img/m-logo.png" alt="로고 텍스트">
+            <h2>모두의 음식 취향을 <span>SHAKE!</span></h2>
+            <img id="m-2" src="./img/m-phone.png" alt="메인 폰 이미지">
+        </section>
+
+        <section id="video">
+            <video src="./img/promotion.mp4"></video>
+        </section>
+
+        <!-- <div class="dotted-line"></div> -->
+
+        <section id="bg">
+            <p class="sbold">BACKGROUND</p>
+            <h2>눈치 보지말고 자신의 음식취향을<br>
+                자유롭게 공유할 수는 없을까?</h2>
+        </section>
+
+        <section id="bg-1">
+            <div class="dashed-line">
+                <span></span>
+                <span></span>
+            </div>
+            <p class="sbold">'Shakeat' 은 자신의 취향을 조금 더<br>
+            편하고 즐겁게 공유하고자 합니다.
+            </p>
+            <div class="dashed-line2">
+                <span></span>
+                <span></span>
+            </div>
+            <ul id="problem">
+                <li class="shortdot">
+                    <div>
+                        <p>나와는 다른 상대방의</p>
+                        <h3 class="sbold">개인 취향을 존중</h3>    
+                    </div>
+
+                    <p>눈치를 보면서 선택이나 결정을 내리는 <br>
+                        시대에서 벗어나 자신이 원하는 바를<br>
+                        명확하게 표현하는 시대가 왔다. 이제는<br>
+                        <span class="highlight">자신의 취향을 명확하게 파악하고 표현</span>하는<br> 
+                        사람의 비중이 증가하고 있다.
+                    </p>
+                </li>
+                <li id="longdot">
+                    <div>
+                        <p>상대방과 식사할 때</p>
+                        <h3 class="sbold">눈치보이는 편식</h3>    
+                    </div>
+                    <p>대부분의 사람들은 불편한 사람 뿐 아니라<br> 
+                        친한 사람들과도 식당을 정하는 상황에서<br> 
+                        <span class="highlight">편식하는 음식이나 못 먹는 음식을 말할 때<br> 
+                        눈치보는 경우가 많다</span>고 한다.                                
+                    </p>
+                </li>
+                <li class="shortdot">
+                    <div>
+                        <p>나와 타인을 분류하는</p>
+                        <h3 class="sbold">성격 유형 검사의 유행</h3>    
+                    </div>
+                    <p>
+                        최근 MZ 세대들은 서로 알아가는데<br> 
+                        시간을 허비하지 않고 성격 유형 검사를 통해<br> 
+                        서로의 성격을 파악하고 있다.<br> 
+                        <span class="highlight">이러한 분류로 만들어진 소속감을<br> 
+                        통해 심리적 안정감</span>을 추구한다. 
+                    </p>
+                </li>
+            </ul>
+            <div class="dashed-line3">
+                <span></span>
+                <span></span>
+            </div>
+        </section>
+
+        <section id="solution">
+            <div>
+                <p class="sbold">이렇게 생각해봤어요!</p>
+                <h3 class="sbold">
+                    불편한 대화를 편하고 즐겁게 해결하면서<br>
+                    <span class="highlight">서로의 음식취향을 분석</span>할 수 있게 된다면 어떨까?
+                </h3>    
+            </div>
+        </section>
+
+        <section id="servey">
+            <div id="serveytext">
+                <p class="sbold">User Survey</p>
+                <div>
+                    <h3 class="sbold">음식 취향의 다름으로 인해 불편함을 느낀 경험</h3>
+                    <p>
+                        10대~30대 77명을 대상으로 설문조사를 한 결과,<br>
+                        과반수의 사람들이 못 먹거나 편식이 심한 음식들로 인해<br>
+                        사람들과의 만남에서 불편함을 겪었습니다.
+                    </p>
+                </div>
+            </div>
+            <div id="serveygraph">
+                <ul>
+                    <li>
+                        <p><span>Q.</span> 편식이 심한 음식으로 인해<br>
+                            곤란한 상황을 겪은 적이 있나요?</p>
+                        <img src="./img/graph1.png" 
+                        alt="설문조사 원형 그래프(네 64%, 아니오 36%)">
+                        </li>
+                    <li>
+                        <p><span>Q.</span> 곤란한 상황이라면,<br>
+                            주로 어떤 만남이나 상황이었나요?</p>
+                        <div id="graph2">
+                            <img src="./img/graph2.png" 
+                            alt="설문조사 막대 그래프(순서대로 25.8%, 41.9%, 19.4%, 58.1%, 6.4%, 3.2%)">
+                            <div>
+                                <span>소개팅</span>
+                                <span>회식</span>
+                                <span>친한 친구</span>
+                                <span>어른</span>
+                                <span>어린 아이</span>
+                                <span>여행지</span>    
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <p><span>Q.</span> 주변에서 편식으로 곤란을 겪는 상황을<br>
+                            보신 경우가 있으신가요?</p>
+                        <img id="graph3" src="./img/graph3.png" 
+                        alt="설문조사 원형 그래프(네 70%, 아니오 30%)">
+                    </li>
+                    <li>
+                        <p><span>Q.</span> 이처럼 곤란한 상황들을 해결하기 위해<br>
+                            어떤 행동을 하셨나요?</p>
+                        <div id="graph4">
+                            <p>1. 제가 먹을 수 있는 음식이 있으면서 상대방이 먹고 싶은 음식도 있는 다른 식당을 찾은적이 있어요.</p>
+                            <p>2. 참고 먹었지만 안 보이는 곳 에서 많이 버렸어요.</p>
+                            <p>3. 솔직하게 못 먹는다고 말하지만 분위기를 띄우면서 말해야 해서 불편했어요.</p>
+                            <p>4. 못 먹는다고 돌려말하거나 그냥 참고 먹었어요. </p>
+                            <p>5. 저 하나 때문에 다른 식당을 정해야 하는 상황이였어서 그냥 참고 먹었어요.</p>
+                            <p>6. 그냥 알러지 반응이 있다고 거짓말 했어요.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="insight">
+            <div id="insighttext">
+                <p class="sbold">Key Insight</p>
+                <h3 class="sbold">대면하지 않아도 자신의 음식 취향을 <br>
+                    공유할 수 있도록!
+                </h3>
+                <p>
+                    SNS 사용량 증가에 따라 비대면 소통으로도 서로의 식사 정보를 <br>
+                    확인할 수 있도록 모바일 기능인 네임드랍을 활용할 것 입니다.
+                </p>
+            </div>
+            <div>
+                <img src="./img/insight.png" 
+                alt="불편한 상황 x, 비대면 소통 증가 -> 비대면 음식 취향 공유">
+            </div>
+        </section>
+
+        <section id="keywords">
+            <p class="sbold">UI Keywords</p>
+            <ul>
+                <li>
+                    <p>1.</p>
+                    <h3>단축성</h3>
+                    <p class="gray">Contractibleness</p>
+                    <p>사용자가 손쉽게 원하는 콘텐츠를<br>
+                        처음부터 마지막까지 쉽게<br>
+                        마무리 할 수 있도록 해야합니다.</p>
+                </li>
+                <li>
+                    <p>2.</p>
+                    <h3>논리성</h3>
+                    <p class="gray">Logicality</p>
+                    <p>사용자가 보기에 정보가 제공되는 <br>
+                        순서나 구조가 논리적이라고<br>
+                        생각할 수 있어야 합니다.</p>
+                    </li>
+                <li>
+                    <p>3.</p>
+                    <h3>개인화</h3>
+                    <p class="gray">Individualization</p>
+                    <p>사용자가 자신의 활동 내역이나 <br>
+                        저장한 서비스 내역 등을 한 눈에  <br>
+                        알아 볼 수 있어야 합니다.</p>
+                </li>
+                <li>
+                    <h3 class="sbold">Insight</h3>
+                    <p class="sbold">사용자 개인의 취향을 존중하는<br>
+                        구조적 기능을 제공하고 간단하게<br>
+                        과업을 마무리할 수 있도록!
+                    </p>
+                </li>    
+            </ul>
+        </section>
+
+        <section id="goal">
+            <div>
+                <p>Project Goal</p>
+                <h3 class="sbold">
+                    불편한 상황을 최대한 피하고 싶은 MZ세대의<br>
+                    음식 취향을 분석하고 공유해주는 서비스 'Shakeat'
+                </h3>
+                <p>
+                    개인의 음식 취향을 재미있게 파악하고 공유하여 소통을 더 원활히 하고, 개개인의 취향 교집합에 맞는 식사 정보를 제공하여 <br>
+                    식사 시 발생되는 불편한 문제나 고민들을 간편하게 해결해주고자 하는 것이 목적입니다.
+                </p>
+            </div>
+        </section>
+
+        <section id="persona-banner" class="persona">
+            <ul>
+                <li>
+                    <div>
+                        <p class="personanumber">01</p>
+                        <p class="sbold personatext">Persona</p>
+                    </div>
+                    <div class="sbold">
+                        ‘소심한 성격 탓에 상견례 자리에서<br>
+                        못먹는 음식을 말하기 두려워요.’
+                    </div>
+                    <img src="./img/arrow.png" alt="페르소나 상세보기 화살표">
+                </li>
+                <li>
+                    <div>
+                        <p class="personanumber">02</p>
+                        <p class="sbold personatext">Persona</p>
+                    </div>
+                    <div class="sbold">
+                        ‘첫만남에 상대의 식성에 맞는<br>
+                        식당을 선택하는 것이 어려워요.’
+                    </div>
+                    <img src="./img/arrow.png" alt="페르소나 상세보기 화살표">
+                </li>
+                <li>
+                    <div>
+                        <p class="personanumber">03</p>
+                        <p class="sbold personatext">Persona</p>
+                    </div>
+                    <div class="sbold">
+                        ‘소개팅 날, 상대방의 음식 취향을<br>
+                        고려하지 못해 망칠까봐 두려워요.’
+                    </div>
+                    <img src="./img/arrow.png" alt="페르소나 상세보기 화살표">
+                </li>
+            </ul>
+        </section>
+        <section id="persona-person" class="persona">
+            <ul>
+                <li id="ymj">
+                    <div class="persona-text">
+                        <div class="name">
+                            <h1 class="sbold">유민재 <span>34살</span></h1>
+                            <ul>
+                                <li>소심한</li>
+                                <li>성실한</li>
+                                <li>책임감이 강한</li>
+                                <li>배려</li>
+                            </ul>
+                        </div>
+                        <h1>‘다가올 상견례 자리에서<br>
+                            편식을 말하는 것이 두려워요.’
+                        </h1>
+                    </div>
+                    <p>유민재씨는 현재 34살로 여자친구와 결혼을 앞둔 상태이다. 그래서 곧 상견례 자리를 가지게 되는데 <br>
+                        평소 편식이 심한 민재씨는 상대방의 부모님께 음식종류를 하나하나 말하기가 예의없는 행동일까<br>
+                        싶어 고민을 하게 된다.
+                    </p>
+                    <p>
+                        <span>Needs</span><br>
+                        안 먹는 음식을 하나하나 말하지 않고도 쉽고 빠르게<br>
+                        공유할 수 있었으면 좋겠다.
+                    </p>
+                </li>
+
+                <li id="ksj">
+                    <div class="persona-text">
+                        <div class="name">
+                            <h1 class="sbold">강수진 <span>25살</span></h1>
+                            <ul>
+                                <li>쾌활한</li>
+                                <li>운동</li>
+                                <li>자기관리</li>
+                                <li>MZ</li>
+                            </ul>
+                        </div>
+                        <h1>‘자기관리 중인데 친구들과 맛있게<br>
+                            먹을 수 있는 음식을 알고싶어요.’
+                        </h1>
+                    </div>
+                    <p>강수진씨는 현재 25살로 자기관리를 굉장히 중요하게 생각하는 대학생이다. 수진씨는 친구들과  <br>
+                        대화를 하던 도중 오늘은 어디서 식사를 할지 고민하게 되고, 평소 매일 하던 식단이 지루해지기 <br>
+                        시작하면서 특별하지만 친구들과 함께 건강하면서도 취향에 맞는 음식을 알고 싶어한다.
+                    </p>
+                    <p>
+                        <span>Needs</span><br>
+                        안 먹는 음식을 하나하나 말하지 않고도 쉽고 빠르게<br>
+                        공유할 수 있었으면 좋겠다.
+                    </p>
+                </li>
+
+                <li id="kar">
+                    <div class="persona-text">
+                        <div class="name">
+                            <h1 class="sbold">김아름 <span>28살</span></h1>
+                            <ul>
+                                <li>차분한</li>
+                                <li>열정적인</li>
+                                <li>만남을 추구</li>
+                                <li>MZ</li>
+                            </ul>
+                        </div>
+                        <h1>‘첫만남에 상대의 식성에 맞는<br>
+                            식당을 선택하는 것이 어려워요’
+                        </h1>
+                    </div>
+                    <p>김아름씨는 현재 28살로 새로운 사람과의 만남을 좋아한다. 이번에 지인들의 소개로 <br>
+                        새로운 이성과의 만남을 가지게 된 아름씨는 첫 만남에 어디로 식사를 하러 갈지에 대해 <br>
+                        고민을 많이 하게 되고 혹여나 상대가 싫어하는 음식을 고르게 될까봐 걱정이 커지기만 한다.
+                    </p>
+                    <p>
+                        <span>Needs</span><br>
+                        나와 만남을 가지려는 상대방이 무엇을 좋아하고 싫어하는지<br>
+                        음식 취향 정보를 볼 수 있으면 좋겠다.
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="value">
+            <div id="valuetext">
+                <p class="sbold">Service Value</p>
+                <h3 class="sbold">우리는 이런 가치의 서비스들을 제공합니다</h3>
+            </div>
+            <ul id="service">
+                <li>
+                    <div>
+                        <p class="sbold">01</p>
+                        <h3 class="sbold">
+                            음식 취향 테스트를 통한<br>
+                            취향 유형 도출
+                        </h3>
+                    </div>
+                    <p>
+                        서로의 음식 취향을 빠르고 쉽게 알 수 있도록<br>
+                        회원가입 이후의 앱 사용 중에도 자신의 음식 취향을<br>
+                        유형검사를 통해 네 가지 알파벳으로 정의할 수 있습니다.
+                    </p>
+                </li>
+                <li>
+                    <div>
+                        <p class="sbold">02</p>
+                        <h3 class="sbold">
+                            AI 분석을 통한 서로 간의<br>
+                            약속 장소 정하기
+                        </h3>
+                    </div>
+                    <p>
+                        앱 내의 채팅 방에서 서로가 설정한<br>
+                        음식 취향 정보, 상황, 거리 등을 AI 분석기능을 통해<br>
+                        음식과 장소를 지정해 줄 수 있습니다.
+                    </p>
+                </li>
+                <li>
+                    <div>
+                        <p class="sbold">03</p>
+                        <h3 class="sbold">
+                            자신의 음식 취향에 맞는<br>
+                            메인 컨텐츠들
+                        </h3>
+                    </div>
+                    <p>
+                        앱 메인페이지에서 자신의 선호 식재료에 따라<br>
+                        보여지는 취향의 음식들이 소개되며 자신과 비슷한<br>
+                        식사 취향의 사람들이 많이 보는 식당 및 음식과<br>
+                        싫어하는 음식들 또한 확인 할 수 있습니다.
+                    </p>
+                </li>
+            </ul>
+        </section>
+        
+        <section id="appintro">
+            <h2>
+                서로의 음식 취향을 섞어<br>
+                나의 취향을 말하는 것이 부끄럽지 않도록!
+            </h2>
+        </section>
+
+        <section id="s4tt">
+            <h3 class="sbold">
+                S 4 TYPE TEST 를 통해<br>
+                본인의 음식 취향을 파악해보세요!
+            </h3>
+            <p>
+                테스트를 완료하면 본인에게 해당되는 캐릭터를 알 수 있고,<br>
+                프로필로 지정할 수 있어요.
+            </p>
+            <img src="./img/phone.png" alt="아이폰 목업">
+            <iframe src="https://yourwjd.github.io/S4-Type-Test/" title="음식 취향 테스트 웹 사이트"></iframe>
+
+        </section>
+
+        <section id="testresult">
+            <article>
+                <div class="proBox active">
+                    <img src="./img/test/1.png" alt="테스트 결과 1">
+                </div>
+                <div class="proBox">
+                    <img src="./img/test/2.png" alt="테스트 결과 2">
+                </div>
+                <div class="proBox">
+                    <img src="./img/test/3.png" alt="테스트 결과 3">
+                </div>
+                <div class="proBox">
+                    <img src="./img/test/4.png" alt="테스트 결과 4">
+                </div>
+                <div class="proBox">
+                    <img src="./img/test/5.png" alt="테스트 결과 5">
+                </div>
+                <div class="proBox">
+                    <img src="./img/test/6.png" alt="테스트 결과 6">
+                </div>
+                <div class="proBox">
+                    <img src="./img/test/7.png" alt="테스트 결과 7">
+                </div>
+                <div class="proBox">
+                    <img src="./img/test/8.png" alt="테스트 결과 8">
+                </div>
+                <div class="proBox">
+                    <img src="./img/test/9.png" alt="테스트 결과 9">
+                </div>
+                <div class="proBox">
+                    <img src="./img/test/10.png" alt="테스트 결과 10">
+                </div>
+                <div class="proBox">
+                    <img src="./img/test/11.png" alt="테스트 결과 11">
+                </div>
+                <div class="proBox">
+                    <img src="./img/test/12.png" alt="테스트 결과 12">
+                </div>
+                <div class="proBox">
+                    <img src="./img/test/13.png" alt="테스트 결과 13">
+                </div>
+                <div class="proBox">
+                    <img src="./img/test/14.png" alt="테스트 결과 14">
+                </div>
+                <div class="proBox">
+                    <img src="./img/test/15.png" alt="테스트 결과 15">
+                </div>
+                <div class="proBox">
+                    <img src="./img/test/16.png" alt="테스트 결과 16">
+                </div>
+            </article>
+            <p class="sbold">
+                S 4 TYPE TEST 결과지를 통해<br>
+                16가지 유형의 결과를 확인하세요!
+            </p>
+        </section>
+
+
+        <!--나영이 코드-->
+        <section id="s_home">
+            <div class="s_h_text">
+                    <h1>
+                        HOME
+                    </h1>
+                    <h2>
+                        취향분석을 통한 나만의 취향 MBTI
+                    </h2>
+                    <p>
+                        취향 분석 테스트로 나온 유형을 통해 나와 비슷한 사람들의 추천 식당 정보와 <br> 
+                        음식 취향에 대한 더욱 많은 컨텐츠들을 볼 수 있습니다.
+                    </p>
+            </div>
+            <div class="s_h_main">
+                <div class="s_h_main2">
+                    
+                    <h1>나만의 음식 취향</h1>
+                <p>취향을 분석하여 자신의 위치와 취향에 <br>
+                맞는 음식을 추천받을 수 있고 자신의 <br>
+                취향 유형을 재설정 할 수 있어요.</p>
+                <!-- <span></span> -->
+                </div>
+                
+                    <img src="./img/home_phone.png" alt="" class="s_h_m1">
+                <ul>
+                    <li>
+                        <img src="./img/h_p1.png" alt="">
+                    </li>
+                    <li>
+                        <img src="./img/h_p2.png" alt="">
+                    </li>
+                    <li>
+                        <img src="./img/h_p3.png" alt="">
+                    </li>
+                </ul>
+                <div class="s_h_main_l">
+                    <h1>같은 취향 같은 식당</h1>
+                    <p>같은 취향 유형을 가진 친구들이<br>
+                    즐겨찾기한 식당을 한 눈에 보여줘요.</p>
+                </div>
+                
+                <img src="./img/home_foodname.png" alt="" class="s_h_main_l2">
+                <div class="s_h_main_l3">
+                    <h1>나만의 식재료 활용</h1>
+                    <p>앞에서 테스트한 식재료들을<br>
+                    사용하여 만든 음식을 추천해줘요.</p>
+                </div>
+                <img src="./img/home_phone2.png" alt="" class="s_h_m2">
+                <div class="s_h_main_l4">
+                    <h1>다양한 추가 콘텐츠</h1>
+                    <p>취향 타입 궁합표부터 음식에 대한<br>
+                    다양한 스토리까지 한 번에 볼 수 있어요.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="s_profile">
+            <div class="s_p_left">
+                <div class="s_p_left1">
+                    <h1>PROFILE CARD</h1>
+                    <h2>프로필 카드와 QR카드</h2>
+                    <p>
+                        자신의 쉐이크잇 프로필 상세 카드를 링크와 <br>
+                        QR코드로 공유가 가능하고 IOS의 네임드랍 기능을 <br>
+                        통해서도 상대방과 공유가 가능해요.
+                    </p>
+                
+                    <ul>
+                        <li>
+                            <span></span>
+                            <img src="./img/wifi_1.png" alt="네임드랍기능">
+                        </li>
+                        <li>
+                            <img src="./img/wifi_2.png" alt="네임드랍기능2">
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="s_p_right">
+                <img src="./img/profile_1.png" alt="profile1" class="image active">
+                <img src="./img/profile_2.png" alt="profile2" class="image">
+            </div>
+            <img src="./img/bg.png" alt="" class="bg">
+        </section>
+
+        <section id="s_chatting">
+            <div class="s_chat_left">
+                    <h2>CHATTING</h2>
+                    <h1>본격적으로 채팅을 통해 <br>
+                    식사장소를 정해봐요!</h1>
+                <ul class="s_c_l2">
+                    <li>
+                        <h3>1. AI 분석 시작하기</h3>
+                        <p>AI 분석 버튼을 클릭하여 서로의 취향을 분석해<br>
+                        성공적인 만남을 성사할 수 있도록 도와줘요.</p>
+                    </li>
+                    <li>
+                        <h3>2. 프로필 재설정하기</h3>
+                        <p>분석 전, 자신의 프로필정보를 바꾸고 싶다면<br>
+                        채팅 안에서도 다시 테스트를 진행하여 업데이트할 수 있어요.</p>
+                    </li>
+                    <li>
+                        <h3>3. 초대장 보내기</h3>
+                        <p>쉐이크잇의 앱을 설치하지 않은 사람들을 고려하여<br>
+                        취향정보와 링크가 삽입된 초대장을 보낼 수 있어요.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="s_chat_right">
+                <img src="./img/chat_p1.png" alt="">
+            </div>
+        </section>
+
+        <section id="s_promise">
+            <div class="s_pro_left">
+                <img src="./img/pro_1.png" alt="">
+            </div>
+            <div class="s_pro_right">
+                <h1>상세한 <br>
+                만남 유형 설정</h1>
+                <p>만나는 상황의 다양성을 주어 AI가 분석할 때 <br>
+                더욱 알맞은 음식을 추천해줘요.</p>
+            </div>
+        </section>
+
+        <section id="s_fr_cal">
+            <div class="s_fr">
+                <img src="./img/s_fr.png" alt="">
+                <ul>
+                    <li>FRIENDS</li>
+                    <li>앱 내에서 친구를 등록해보세요</li>
+                    <li>친구 메뉴에서 간편하게 <br>
+                    채팅관리와 프로필을 확인할 수 있어요.</li>
+                </ul>
+            </div>
+            <div class="s_middle_t">
+                <span></span>
+                <img src="./img/cal_check.png" alt="">
+                <p>책갈피 형식으로 만났던 날을 <br>
+                기록할 수 있어요.</p>
+            </div>
+            <div class="s_cal">
+                <ul>
+                    <li>CALENDAR</li>
+                    <li>캘린더를 통해서 약속 <br>
+                    정리가 가능해요</li>
+                    <li>친구와 채팅에서 나눈 식사 약속이 성립이 되면 <br>
+                    앱 내의 캘린더 메뉴에서 일정이 등록되어 <br>
+                    유저의 일정 관리가 쉬워져요</li>
+                </ul>
+                <img src="./img/s_cal.png" alt="">
+            </div>
+        </section>
+        <!--나영이 코드 끝-->
+
+
+        <section id="logo">
+            <div>
+                <h3 class="sbold">LOGO System</h3>
+                <p>
+                    쉐이크잇의 첫 알파벳인 S와 시그니처 컬러 두가지를 조합하여<br>
+                    섞이는 느낌을 표현하고자 하였습니다.
+                </p>
+                <img src="./img/m-logo.png" alt="텍스트 로고">
+            </div>
+            <img src="./img/logosystem.png" alt="심볼 로고">
+        </section>
+
+        <section id="color">
+            <div>
+                <h3 class="sbold">Color System</h3>
+                <p>
+                    음식 취향에 대한 새로운 패러다임을 제공하고자 하는 서비스의 의도를 컬러와 연결시켜 디자인 키워드를 도출해냈습니다.<br>
+                    이를 통해 <span class="pink">Shakeat</span>은 기존 시장의 맛집 추천 기능 보단 <span class="green">서로의 음식 취향을 분석하고 매칭하는 것에 집중</span>하여<br>
+                    트렌디한 색상을 사용해 차별성 있는 아이덴티티를 부여하였습니다.
+                </p>
+            </div>
+            <article>
+                <div>
+                    <h3>Main Color</h3>
+                    <p>#FF1477</p>
+                    <h2>Emerald Blush</h2>
+                </div>
+                <div>
+                    <h3>Main Color</h3>
+                    <p>#00DB4A</p>
+                    <h2>Vivid</h2>
+                </div>
+                <div>
+                    <h3>Sub Color</h3>
+                    <p>#101010</p>
+                </div>
+                <div>
+                    <h3>Sub Color</h3>
+                    <p>#FFFFFF</p>
+                </div>
+            </article>
+        </section>
+
+        <section id="font">
+            <h3 class="sbold">Font System</h3>
+            <div>
+                <p>Pretendard</p>
+                <div id="bfont">
+                    <p class="bold">모두의 음식 취향을 Shake!</p>
+                    <span></span>
+                    <p>Bold</p>
+                </div>
+                <div id="sbfont">
+                    <p class="sbold">모두의 음식 취향을 Shake!</p>
+                    <span></span>
+                    <p>Semi Bold</p>
+                </div>
+                <div id="mfont">
+                    <p>모두의 음식 취향을 Shake!</p>
+                    <span></span>
+                    <p>Medium</p>
+                </div>
+                <div id="lfont">
+                    <p class="light">모두의 음식 취향을 Shake!</p>
+                    <span></span>
+                    <p>Regular</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="icon">
+            <div id="icontext">
+                <h3 class="sbold">Icon System</h3>
+                <p>
+                    앱의 분위기에 맞는 핑크 네비게이션바와 아이콘, 다양한 음식을 표현하는 여러 종류의 화이트 아이콘<br>
+                    총 두가지 종류로 제작하여 서로 상호보완하는 아이콘을 만들고자 하였습니다.
+                </p>
+            </div>
+            <div id="navicon">
+                <img src="./img/nav.png" alt="내비게이션 아이콘">
+            </div>
+            <div id="foodicon">
+                <img src="./img/icon1.png" alt="음식 아이콘1">
+                <img src="./img/icon2.png" alt="음식 아이콘2">
+            </div>
+        </section>
+
+        <section id="character">
+            <p class="sbold">Character</p>
+            <article>
+                <div id="characterimg">
+                    <img id="pp" src="./img/pppp.png" alt="달콤한 맛 캐릭터">
+                    <img id="bb" src="./img/bbbb.png" alt="짠 맛 캐릭터">
+                    <img id="gg" src="./img/gggg.png" alt="매운 맛 캐릭터">
+                    <img id="yy" src="./img/yyyy.png" alt="신 맛 캐릭터">
+                </div>
+                <!-- <div id="charactertext">
+                    <div id="bbbb">
+                        <span></span>
+                        <span></span>
+                        <h3>짜요이</h3>
+                        <p>짠 것을 좋아하는 짜요이<br>
+                        물과 함께 항상 다녀요</p>
+                    </div>
+                    <div id="pppp">
+                        <h3>달룽이</h3>
+                        <p>달콤한 것을 좋아하는 달룽이<br>
+                        당신의 달콤함을 책임져요</p>
+                        <span></span>
+                    </div>
+                    <div id="gggg">
+                        <h3>매부이</h3>
+                        <p>매운 것을 좋아하는 매부이<br>
+                        씁--하</p>
+                        <span></span>
+                    </div>
+                    <div id="yyyy">
+                        <span></span>
+                        <h3>새콤이</h3>
+                        <p>신 것을 좋아하는 새콤이<br>
+                        아이셔! 침샘이 고여요</p>
+                    </div>
+                </div> -->
+            </article>
+        </section>
+
+        <section id="mockup">
+            <img src="./img/mockup.png" alt="앱 화면 목업">
+        </section>
+
+        <footer>
+            <img src="./img/wlogo.png" alt="쉐이크잇 화이트 텍스트 로고">
+            <h3>Shake Everyone's Food Tastes!</h3>
+            <ul>
+                <li>
+                    <h3>Planner</h3>
+                    <div>
+                        <p>문자영 ㅣ melissa1030@naver.com</p>
+                        <p>박서빈 ㅣ parkcn12022@naver.com</p>
+                    </div>
+                </li>
+                <li>
+                    <h3>Designer</h3>
+                    <div>
+                        <p>조은빈 ㅣ whdmsqls35@naver.com</p>
+                        <p>이사랑 ㅣ lang1113@naver.com</p>
+                    </div>
+                </li>
+                <li>
+                    <h3>Programmer</h3>
+                    <div>
+                        <p>오나영 ㅣ nyoungs117@gmail.com</p>
+                        <p>양유정 ㅣ yourwjd13@gmail.com</p>
+                    </div>
+                </li>
+            </ul>
+            <span></span>
+            <p>Copyright ⓒ 2023 SHAKEAT. 모두의 음식취향을 SHAKE. Shake Everyone's Food Tastes.</p>
+        </footer>    
+    </div>
+
+    <script src="index.js"></script>
+    <script src="indexjq.js"></script>
+</body>
+
+</html>
