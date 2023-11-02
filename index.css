@@ -13,7 +13,7 @@ body{
     font-weight: 400;
     color: #fff;
     background: #101010;
-    height: 100%;
+    height: auto;
 }
 li {
     list-style: none;
@@ -63,6 +63,8 @@ nav ul li {
 nav ul li:hover{
     color: #FF1477;
     transition: all 0.3s ease;
+    font-size: calc(100vw * 20 / 1920);
+    font-weight: bold;
 }
 
 #wrap {
@@ -102,9 +104,6 @@ section {
     height: auto;
 }
 
-.bold{
-    font-weight: 900;
-}
 .sbold{
     font-weight: 600;
 }
@@ -117,8 +116,10 @@ section {
 }
 
 #main{
+    width: 100%;
+    height: calc(100vw * 1080 / 1920);
     text-align: center;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 #m-1{
     display: block;
@@ -146,7 +147,6 @@ section {
 }
 
 #video video {
-    background-color: rgba(245, 222, 179, 0.493);
     width: 80%;
 }
 
@@ -654,12 +654,11 @@ section {
 #persona-person{
     position: relative;
     position: absolute;
-    top: calc(100vw * 9309 / 1920);
+    top: calc(100vw * 9433 / 1920);
     left: 0;
     width: 80%;
     height: auto;
     z-index: -1;
-    /* background: red; */
 }
 #persona-person>ul{
     width: 100%;
@@ -672,7 +671,6 @@ section {
     background: #101010;
     background-repeat: no-repeat;
     background-size: cover;
-    z-index: -1;
 }
 
 #ymj{
@@ -863,16 +861,14 @@ section {
 } */
 #testresult article {
     position: relative;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    top: calc(100vw * 1950 / 1920);
-    left: 50%;
-}
-article .active{
-    z-index: 1;
-    width: calc(100vw * 357.25 / 1920);
-    height: calc(100vw * 649.96 / 1920);
+    position: absolute;
+    top: 73%;
+    left: -10.3%;
+    width: calc(100vw * 2299 / 1920);
+    height: calc(100vw * 2299 / 1920);
+    border-radius: 50%;
+
+    transition: transform 0.5s ease;
 }
 /* .proBox{
     position:absolute;
@@ -886,7 +882,7 @@ article .active{
     left: 50%;
     width: calc(100vw * 294.75 / 1920);
     height: calc(100vw * 536.25 / 1920);
-    transform-origin: top left;
+    transform: translate(-50%, -50%);
 }
 /* .proBox img{
     position:absolute;
@@ -1008,6 +1004,7 @@ article .active{
     font-size: calc(100vw * 30/1920);
     font-weight: 600;
     margin-bottom: 2.4%;
+    color: #C9C9C9
 }
 .s_h_text h2 {
     font-size: calc(100vw * 30/1920);
@@ -1192,7 +1189,7 @@ article .active{
     font-size: calc(100vw * 32/ 1920);
     font-weight: 600;
     margin-bottom: calc(100vw * 64/ 1920);
-    
+    color: #C9C9C9
 }
 
 .s_p_left h2 {
@@ -1311,6 +1308,7 @@ article .active{
     font-size: calc(100vw * 32/ 1920);
     font-weight: 600;
     margin-bottom: calc(100vw * 57/ 1920);
+    color: #C9C9C9
   }
   .s_chat_left h1 {
     font-size: calc(100vw * 48/ 1920);
@@ -1422,6 +1420,7 @@ article .active{
     font-size: calc(100vw * 32/ 1920);
     font-weight: 600;
     margin-bottom: calc(100vw * 28/ 1920);
+    color: #C9C9C9
 }
 .s_fr li:nth-child(2) {
     font-size: calc(100vw * 36/ 1920);
@@ -1466,6 +1465,7 @@ article .active{
     font-size: calc(100vw * 32/ 1920);
     font-weight: 600;
     margin-bottom: calc(100vw * 27/ 1920);
+    color: #C9C9C9
 }
 .s_cal li:nth-child(2) {
     font-size: calc(100vw * 36/ 1920);

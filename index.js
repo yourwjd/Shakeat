@@ -1,14 +1,43 @@
+//내비게이션 바 이동
+const headerMenu = document.querySelectorAll("#header a");
+
+var logo = document.querySelector("#main");
+const video = document.querySelector("#video");
+const planning = document.querySelector("#bg");
+const service = document.querySelector("#s4tt");
+const design = document.querySelector("#logo");
+
+headerMenu[0].onclick = function(event) {
+    event.preventDefault();
+    logo.scrollIntoView({ behavior: 'smooth' });
+};
+
+headerMenu[1].onclick = function(event) {
+    event.preventDefault();
+    video.scrollIntoView({ behavior: 'smooth' });
+};
+
+headerMenu[2].onclick = function(event) {
+    event.preventDefault();
+    planning.scrollIntoView({ behavior: 'smooth' });
+};
+
+headerMenu[3].onclick = function(event) {
+    event.preventDefault();
+    service.scrollIntoView({ behavior: 'smooth' });
+};
+
+headerMenu[4].onclick = function(event) {
+    event.preventDefault();
+    design.scrollIntoView({ behavior: 'smooth' });
+};
+
+
+
 //헤더 없애기
 var myHeader = document.getElementById("header"); /*header 변수 할당*/
 var isHeaderVisible = true; /* 헤더가 보이는지 여부를 나타내는 변수 추가 */
 var previousScrollPosition = 0; /* 이전 스크롤 위치를 저장하는 변수 추가 */
-
-myHeader.onmouseover = function(){  /*헤더에 마우스  오버 시*/
-    this.classList.add("over") /*over class를 추가한다(css)*/
-}
-myHeader.onmouseout = function(){ /*헤더에 마우스 아웃 시*/
-    this.classList.remove("over") /*over class를 삭제한다(css)*/
-}
 
 window.addEventListener("scroll", function(){ /*스크롤 시*/
     var currentScrollPosition = window.scrollY; /* 현재 스크롤 위치를 저장 */
@@ -21,10 +50,10 @@ window.addEventListener("scroll", function(){ /*스크롤 시*/
         myHeader.style.top = 0; /*헤더 css의 top위치를 0px 한다*/
         isHeaderVisible = true;
     }
-    else if (window.pageYOffset < 100 && isHeaderVisible){ /*200을 넘지 않을 시*/
-        myHeader.style.top = -150 + "px"; /*헤더 css의 top위치를 -100px 한다*/
-        isHeaderVisible = false;
-    }
+    // else if (window.pageYOffset < 100 && isHeaderVisible){ /*200을 넘지 않을 시*/
+    //     myHeader.style.top = -150 + "px"; /*헤더 css의 top위치를 -100px 한다*/
+    //     isHeaderVisible = false;
+    // }
 
     previousScrollPosition = currentScrollPosition; /* 이전 스크롤 위치 업데이트 */
 }); 
@@ -134,5 +163,34 @@ proBoxes.forEach(function(proBox, i) {
   proBox.style.transform = 'translate(' + (x - centerX) + 'px, ' + (y - centerY) + 'px)';
 });
 
+//testresult img 돌아가게
+var testresult = document.getElementById('testresult');
 
+var counter =0;
+var proCount =0;
 
+testresult.addEventListener('wheel',function(event){
+    var testResult = document.querySelector('#testresult article');
+    var proBox = document.querySelectorAll('.proBox');
+
+        if (event.deltaY < 0) {
+            counter += 22.5;
+            proCount += 1;
+            testResult.style.transform = "rotate("+counter+"deg)";
+            proBox.forEach(function(box) {
+            });
+            if(proCount > 15){proCount = 0}
+
+            // event.preventDefault();
+
+        }else if (event.deltaY > 0) {	
+            counter -= 22.5;
+            proCount -= 1;
+            testResult.style.transform = "rotate("+counter+"deg)";
+            proBox.forEach(function(box) {
+            });
+            if(proCount < -15 ){proCount = 0}
+
+            // event.preventDefault();
+        }
+}, false);
