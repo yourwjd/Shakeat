@@ -79,16 +79,17 @@ nav ul li:hover{
     color: #fff;
     background-color: #FF1477;
     position: fixed;
-    bottom: 50px;
-    right: 50px;
+    right: 0;
+    margin-right: 7%;
+    bottom: calc(100vw * 50 / 1920);
     display: inline-block;
     border: none;
-    width: 40px;
-    height: 40px;
-    font-size: 10px;
+    width: calc(100vw * 70 / 1920);
+    height: calc(100vw * 70 / 1920);
+    font-size: calc(100vw * 15 / 1920);
     font-weight: 600;
     cursor: pointer;
-    z-index: 1000000;
+    z-index: 100;
     border-radius: 50%;
     transition: all 0.5s ease;
 }
@@ -147,7 +148,7 @@ section {
 }
 
 #video video {
-    width: 80%;
+    width: 100%;
 }
 
 /* .dotted-line {
@@ -187,12 +188,13 @@ section {
 }
 #bg h2{
     position: relative;
-    margin-top: 3.6%;
     color: #fff;
-    font-size: calc(100vw * 64 / 1920);
+    font-size: calc(100vw * 47 / 1920);
     line-height: 150%;
 }
-
+#bgtext1{
+    margin-top: 3.6%;
+}
 #bg-1{
     position: relative;
     color: #fff;
@@ -647,14 +649,13 @@ section {
     margin: 8.1% 19.1% 0 0;
 }
 
-#persona-banner {
+#persona{
     position: relative;
 }
-
 #persona-person{
     position: relative;
     position: absolute;
-    top: calc(100vw * 9433 / 1920);
+    top: 0;
     left: 0;
     width: 80%;
     height: auto;
@@ -700,7 +701,7 @@ section {
     color: #cdcdcd;
 }
 .name ul{
-    width: calc(100vw * 240 / 1920);
+    width: calc(100vw * 250 / 1920);
 }
 .name li{
     display: inline-block;
@@ -1530,7 +1531,7 @@ section {
 }
 
 #color{
-    padding: 9.1% 0 2.4% 0;
+    padding-top: 9.1%;
     width: 100%;
     height: auto;
 }
@@ -1601,7 +1602,8 @@ section {
 #font{
     display: flex;
     justify-content: space-between;
-    padding: 2.4% 10% 10.9% 10%;
+    margin-top: 7.6%;
+    padding: 0 10% 10.9% 10%;
     width: 80%;
     height: auto;
 }
@@ -1693,7 +1695,7 @@ section {
 
 #character{
     position: relative;
-    margin-bottom: calc(100vw * 348 / 1920);
+    margin-bottom: calc(100vw * 250 / 1920);
     width: 100%;
     height: auto;
     background-image: url(./img/characterbg.png);

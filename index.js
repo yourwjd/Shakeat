@@ -78,6 +78,41 @@ var button = document.querySelector("#scroll-to-top-button");
 button.addEventListener("click", scrollToTop);
 
 
+//background  타이핑 효과
+let bgtexts = document.querySelectorAll("#bg h2");
+let texts = Array.from(bgtexts).map(bgtext => bgtext.innerHTML);
+bgtexts.forEach(bgtext => bgtext.innerHTML = '');
+
+let index = 0;
+let line = 0;
+
+function writeText() {
+    if (line < texts.length) {
+        if (index < texts[line].length) {
+            if (texts[line][index] === ' ') {
+                bgtexts[line].innerHTML += '&nbsp;';
+            } else {
+                bgtexts[line].innerHTML += texts[line][index];
+            }
+            index++;
+        } else {
+            line++;
+            index = 0;
+        }
+    } else {
+        // When we reach the end, reset line and index
+        line = 0;
+        index = 0;
+        // Clear the text after a delay of 1 second
+        clearInterval(intervalId);
+        setTimeout(() => {
+            bgtexts.forEach(bgtext => bgtext.innerHTML = '');
+            intervalId = setInterval(writeText, 100);
+        }, 1000); // 1000ms = 1s
+    }
+}
+
+let intervalId = setInterval(writeText, 100);
 
 
 
@@ -85,7 +120,7 @@ button.addEventListener("click", scrollToTop);
 var servey = document.getElementById('servey');
 var serveygraph = document.getElementById('serveygraph');
 
-servey.addEventListener('wheel', function(e) {
+serveygraph.addEventListener('wheel', function(e) {
     var speed = 650;  // 이동 속도
     var currentLeft = parseInt(window.getComputedStyle(serveygraph).left, 10);
 
@@ -164,7 +199,7 @@ proBoxes.forEach(function(proBox, i) {
 });
 
 //testresult img 돌아가게
-var testresult = document.getElementById('testresult');
+var testresult = document.querySelector('#testresult article');
 
 var counter =0;
 var proCount =0;
@@ -181,7 +216,7 @@ testresult.addEventListener('wheel',function(event){
             });
             if(proCount > 15){proCount = 0}
 
-            // event.preventDefault();
+            event.preventDefault();
 
         }else if (event.deltaY > 0) {	
             counter -= 22.5;
@@ -191,6 +226,6 @@ testresult.addEventListener('wheel',function(event){
             });
             if(proCount < -15 ){proCount = 0}
 
-            // event.preventDefault();
+            event.preventDefault();
         }
 }, false);
