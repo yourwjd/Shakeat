@@ -115,6 +115,32 @@ function writeText() {
 let intervalId = setInterval(writeText, 100);
 
 
+//bg2 순차적 등장
+const p_set = document.querySelector('.p-circle');
+
+const image1 = document.querySelector('#p1');
+const image2 = document.querySelector('#p2');
+const image3 = document.querySelector('#p3');
+
+image1.style.transition = 'all 0.5s ease 0s';
+image2.style.transition = 'all 0.5s ease 0.2s';
+image3.style.transition = 'all 0.5s ease 0.4s';
+
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+
+        const p_setPosition = p_set.getBoundingClientRect().top - scrollPosition;
+    
+        if (p_setPosition <= window.innerHeight * 2 && p_setPosition >= -window.innerHeight * 2) {
+            image1.style.transform = 'translateY(150%)';
+            image2.style.transform = 'translateY(150%)';
+            image3.style.transform = 'translateY(150%)';
+        } else {
+            image1.style.transform = 'translateY(0px)';
+            image2.style.transform = 'translateY(0px)';
+            image3.style.transform = 'translateY(0px)';
+        }
+    });
 
 //user survey 가로 스크롤
 var servey = document.getElementById('servey');

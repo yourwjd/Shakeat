@@ -121,6 +121,9 @@ section {
     height: calc(100vw * 1080 / 1920);
     text-align: center;
     overflow: hidden;
+    background-image: url(/img/mainbg.gif);
+    background-repeat: no-repeat;
+    background-size: cover
 }
 #m-1{
     display: block;
@@ -132,19 +135,46 @@ section {
     font-size: calc(100vw * 37 / 1920);
     color: #fff;
 }
-#main span{
+#shake{
     color: #00DB4A;
 }
+.bounce{
+    display: inline-block;
+    animation: 3s bounce running infinite alternate var(--delay);
+}
+@keyframes bounce {
+    0% {
+      transform: translateY(0em);
+      animation-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+    }
+    5% {
+      transform: translateY(-0.5em);
+      animation-timing-function: cubic-bezier(0.11, 0, 0.5, 0);
+    }
+    10% {
+      transform: translateY(0em);
+      animation-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+    }
+    15% {
+      transform: translateY(-0.1em);
+      animation-timing-function: cubic-bezier(0.11, 0, 0.5, 0);
+    }
+    20%,
+    100% {
+      transform: translateY(0em);
+      animation-timing-function: cubic-bezier(0.5, 1, 0.89, 1);
+    }
+  }
+
 #m-2{
     width: 31%;
-    margin-top: 2.6%;
+    margin-top: 3%;
 }
 
 #video {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10% 0;
 }
 
 #video video {
@@ -164,7 +194,7 @@ section {
 
 #bg{
     position: relative;
-    margin: 11.5% 0;
+    margin-top: 11.5%;
     width: 100%;
     height: calc(100vw * 641 / 1920);
     text-align: center;
@@ -197,17 +227,20 @@ section {
 }
 #bg-1{
     position: relative;
+    padding-top: 11.5%;
     color: #fff;
     width: 100%;
     height: auto;
+    overflow: hidden;
 }
 #bg-1>p{
     position: relative;
-    padding-top: 7.3%;
+    padding-top: 7%;
+    padding-bottom: 1%;
     text-align: center;
     font-size: calc(100vw * 35 / 1920);
-    line-height: 150%;
-    box-shadow: 0 0 70px #101010;
+    line-height: 180%;
+    box-shadow: 0 0 calc(100vw * 70 / 1920) #101010;
     z-index: 10;
 }
 #problem{
@@ -223,29 +256,34 @@ section {
 #problem li{
     width: calc(100vw * 424 / 1920);
     height: calc(100vw * 424 / 1920);
-    border: solid 2px #FF1477;
+}
+.p-circle{
+    width: 100%;
+    height: 100%;
+    border: solid calc(100vw * 2 / 1920) #FF1477;
     border-radius: 50%;
     overflow-y: hidden;
+    
 }
-#problem li:nth-child(2){
-    margin: 0 1.2%;
+#longdot{
+    margin: 0 1.5%;
 }
-#problem li:nth-child(2) > p{
+#p2 > p{
     margin-top: 5%;
 }
-#problem div{
+.p-circle div{
     padding-top: 15%;
     height: 18%;
     background-color: #FF1477;
 }
-#problem div p{
+.p-circle div p{
     margin-bottom: 0.7%;
     font-size: calc(100vw * 16 / 1920);
 }
-#problem div h3{
+.p-circle h3{
     font-size: calc(100vw * 29 / 1920);
 }
-#problem li>p{
+.p-circle>p{
     padding: 8% 0 20% 0;
     font-size: calc(100vw * 19.5 / 1920);
     line-height: 180%;
@@ -265,7 +303,8 @@ section {
   }
   .dashed-line span:nth-child(2) {
     position: absolute;
-    left: 50%;
+    top: calc(100vw * 30 / 1920);
+    left: 49.5%;
     width: 1%;
     height: calc(100vw * 100 / 1920);
     background: linear-gradient(to top, #101010, transparent);
@@ -298,7 +337,7 @@ section {
 }
 .dashed-line3 span:nth-child(1) {
     position: absolute;
-    top: 132%;
+    top: 8%;
     left: 49.5%;
     width: 1%;
     height: calc(100vw * 50 / 1920);
@@ -307,7 +346,7 @@ section {
   }
   .dashed-line3 span:nth-child(2) {
     position: absolute;
-    top: 112%;
+    top: -8%;
     left: 49.5%;
     width: 1%;
     height: calc(100vw * 50 / 1920);
@@ -319,11 +358,11 @@ section {
 #bg-1>p::before{
     content: '';
     position: absolute;
-    top: -87%;
+    top: -85%;
     left: 50%;
     width: 1%;
-    height: 128%;
-    border-left: 2px dashed #FF1477;
+    height: 130%;
+    border-left: calc(100vw * 2 / 1920) dashed #FF1477;
 }
 #problem::before{
     content: '';
@@ -331,7 +370,7 @@ section {
     top: -35%;
     width: 47.5%;
     height: 1%;
-    border-top: 2px dashed #FF1477;
+    border-top: calc(100vw * 2 / 1920) dashed #FF1477;
 }
 #longdot::after{
     content: '';
@@ -339,7 +378,7 @@ section {
     top: -45%;
     width: 10%;
     height: 45%;
-    border-left: 2px dashed #FF1477;
+    border-left: calc(100vw * 2 / 1920) dashed #FF1477;
 }
 .shortdot::before{
     content: '';
@@ -347,7 +386,7 @@ section {
     top: -35%;
     width: 10%;
     height: 35%;
-    border-left: 2px dashed #FF1477;
+    border-left: calc(100vw * 2 / 1920) dashed #FF1477;
 }
 
 #solution::before{
@@ -356,7 +395,7 @@ section {
     top: -8%;
     width: 1%;
     height: 20%;
-    border-left: 2px dashed #FF1477;
+    border-left: calc(100vw * 2 / 1920) dashed #FF1477;
 }
 
 #solution{
@@ -364,17 +403,27 @@ section {
     width: 60%;
     padding: 16% 20%;
     text-align: center;
-    background-image: url(./img/solutionbg.png);
-    background-size: cover;
 }
-#solution div{
+#solution div:nth-child(1){
     padding: 8% 0 13% 0;
     width: 100%;
     background: #101010;
-    border: solid 1px #FF1477;
-    box-shadow: 0 0 100px #ff147683;
+    border: solid calc(100vw * 1 / 1920) #FF1477;
+    box-shadow: 0 0 calc(100vw * 100 / 1920) #ff147683;
     border-radius: calc(100vw * 60 / 1920);
+    animation: light 2s linear infinite;
 }
+@keyframes light {
+    0% {
+        box-shadow: 0 0 calc(100vw * 100 / 1920) #ff147683;
+    }
+    50% {
+        box-shadow: 0 0 calc(100vw * 100 / 1920) #ff147633;
+    }
+    100% {
+        box-shadow: 0 0 calc(100vw * 100 / 1920) #ff147683;
+    }}
+
 #solution p{
     margin-bottom: 6.3%;
     font-size: calc(100vw * 28 / 1920);
@@ -411,6 +460,7 @@ section {
 }
 #serveytext div p{
     font-size: calc(100vw * 18 / 1920);
+    line-height: 150%;
 }
 
 #serveygraph{
@@ -484,7 +534,7 @@ section {
 #insight{
     display: flex;
     justify-content: space-between;
-    padding: 3% 10% 0 10%;
+    padding: 8% 10%;
     width: 80%;
     height: auto;
 }
@@ -500,14 +550,17 @@ section {
 #insighttext p:nth-child(3){
     font-size: calc(100vw * 18 / 1920);
     line-height: 150%;
+    margin-top: -15%;
 }
 #insight div{
-    width: 100%;
+    width: auto;
     height: 100%;
 }
 #insight img{
-    margin-top: 9%;
-    width: 90%;
+    margin-top: 3%;
+    width: calc(100vw * 487/ 1920);
+    right: 0;
+    margin-left: calc(100vw * 190 / 1920);
 }
 
 #keywords{
@@ -531,7 +584,7 @@ section {
     padding: 4.4% 2.3% 8.2% 2.3%;
     width: 18.4%;
     height: 45%;
-    border: solid 1px #00DB4A;
+    border: solid calc(100vw * 1 / 1920) #00DB4A;
     border-radius: calc(100vw * 300 / 1920);
 }
 #keywords ul p{
@@ -552,8 +605,23 @@ section {
     margin: 8% 0 18.9% 0;
 }
 #keywords li:nth-child(4){
-    background: #00db49;
+    /* background: #00db49; */
     padding-bottom: 11.5%;
+    background: linear-gradient(-45deg, #14b5ff, rgb(0, 219, 153), #00DB4A, rgb(0, 219, 153), #14b5ff);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 #keywords li:nth-child(4) h3{
     font-size: calc(100vw * 34 / 1920);
@@ -576,8 +644,21 @@ section {
     width: 100%;
     height: 60%;
     background: #FF1477;
-    box-shadow: 0 0 40px #FF1477;
+    box-shadow: 0 0 calc(100vw * 40 / 1920) #FF1477;
+    animation: goallight 2s linear infinite;
 }
+@keyframes goallight {
+    0% {
+        box-shadow: 0 0 calc(100vw * 100 / 1920) #FF1477;
+    }
+    50% {
+        box-shadow: 0 0 calc(100vw * 100 / 1920) rgba(255, 20, 118, 0.63);
+    }
+    100% {
+        box-shadow: 0 0 calc(100vw * 100 / 1920) #FF1477;
+    }
+}
+
 #goal p:nth-child(1) {
     font-size: calc(100vw * 32 / 1920);
     color: #ffffffc8;
@@ -588,6 +669,17 @@ section {
     font-size: calc(100vw * 40 / 1920);
     line-height: 150%;
 }
+#goal h3 span{
+    display: inline-block;
+    animation: .8s shake infinite alternate;
+}
+@keyframes shake {
+    0% { transform: skewX(15deg); }
+    10% { transform: skewX(-15deg); }
+    20% { transform: skewX(0deg); }
+    100% { transform: skewX(0deg); }  
+  }
+
 #goal p:nth-child(3) {
     margin-top: 4.2%;
     font-size: calc(100vw * 24 / 1920);
@@ -708,7 +800,7 @@ section {
     margin: calc(100vw * 5 / 1920);
     padding: calc(100vw * 10 / 1920) calc(100vw * 16 / 1920);
     font-size: calc(100vw * 20 / 1920);
-    border: solid 1px #fff;
+    border: solid calc(100vw * 1 / 1920) #fff;
     border-radius: calc(100vw * 30 / 1920);
 }
 .persona-text>h1{
@@ -754,7 +846,7 @@ section {
 }
 #service li{
     width: 32%;
-    border: solid 2px #FF1477;
+    border: solid calc(100vw * 2 / 1920) #FF1477;
     border-radius: calc(100vw * 70 / 1920);
     overflow: hidden;
 }
@@ -815,6 +907,16 @@ section {
     padding-top: 1.3%;
     font-size: calc(100vw * 20 / 1920);
     line-height: 150%;
+}
+#s4tt h4 {
+    color: #00DB4A;
+    position: absolute;
+    right: 0;
+    text-align: left;
+    font-size: calc(100vw * 16/1920);
+    margin-top: -25%;
+    line-height: 139.5%;
+    margin-right: calc(100vw * 553/ 1920);
 }
 #s4tt img{
     position: absolute;
@@ -1233,16 +1335,22 @@ section {
 }
 
 .s_p_left1 ul li img {
-    width: calc(100vw * 251/ 1920);
-    height: calc(100vw * 251/ 1920);
+    width: calc(100vw * 577/ 1920);
     position: relative;
     display: inline;
 }
-.s_p_left1 ul li:first-child img {
-    margin-left: calc(100vw * -150/ 1920);
-}
 .s_p_left1 ul li:last-child img {
-    margin-left: calc(100vw * -30/ 1920);
+    margin-left: calc(100vw * -550/ 1920);
+    width: calc(100vw * 527/1920);
+    animation: blink 1.2s 1s ease infinite alternate;
+}
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .s_p_right {
@@ -1645,7 +1753,7 @@ section {
     margin: 0 2%;
     width: 45%;
     height: 1%;
-    border: solid 0.5px #515151;
+    border: solid calc(100vw * 0.5 / 1920) #515151;
 }
 #font>div>div p:nth-child(3){
     width: 15%;
@@ -1688,7 +1796,7 @@ section {
     overflow-x: hidden;
 }
 #foodicon img{
-    margin-bottom: 5.7%;
+    margin-bottom: 4%;
     width: 195%;
     height: 5%;
 }
@@ -1778,7 +1886,7 @@ footer span{
     margin-top: 15%;
     width: 100%;
     height: 1%;
-    border-top: 1px solid #fff;
+    border-top: calc(100vw * 1 / 1920) solid #fff;
 }
 footer>p{
     margin-top: 1.5%;
