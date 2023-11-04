@@ -138,7 +138,7 @@ section {
     height: calc(100vw * 1080 / 1920);
     text-align: center;
     overflow: hidden;
-    background-image: url(/img/mainbg.gif);
+    background-image: url(./img/mainbg.gif);
     background-repeat: no-repeat;
     background-size: cover
 }
