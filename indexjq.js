@@ -140,39 +140,39 @@ window.addEventListener('scroll', () => {
 //   var index = 0;
 //   var isScrollStopped = true;
 
-  // 페이지 스크롤 이벤트를 감지
-  $(window).on('scroll', function () {
-    var scrollPos = $(window).scrollTop();
-    var sectionPos = section.offset().top;
-    var sectionBottomPos = sectionPos + section.height();
+  // // 페이지 스크롤 이벤트를 감지
+  // $(window).on('scroll', function () {
+  //   var scrollPos = $(window).scrollTop();
+  //   var sectionPos = section.offset().top;
+  //   var sectionBottomPos = sectionPos + section.height();
 
-    // 섹션에 도달하면 스크롤 멈춤
-    if (scrollPos >= sectionPos && scrollPos < sectionBottomPos && isScrollStopped) {
-      $('html, body').scrollTop(sectionPos + 150);
-    } else if (scrollPos < sectionPos || scrollPos >= sectionBottomPos) {
-      // 섹션을 벗어나면 스크롤이 다시 움직일 수 있도록 설정
-      isScrollStopped = true;
-      index = 0;
-      updateContent(index);
-    }
-  });
+  //   // 섹션에 도달하면 스크롤 멈춤
+  //   if (scrollPos >= sectionPos && scrollPos < sectionBottomPos && isScrollStopped) {
+  //     $('html, body').scrollTop(sectionPos + 150);
+  //   } else if (scrollPos < sectionPos || scrollPos >= sectionBottomPos) {
+  //     // 섹션을 벗어나면 스크롤이 다시 움직일 수 있도록 설정
+  //     isScrollStopped = true;
+  //     index = 0;
+  //     updateContent(index);
+  //   }
+  // });
 
-  // 마우스 휠 이벤트를 감지
-  $(window).on('wheel', function (e) {
-    if (isScrollStopped) {
-      if (e.originalEvent.deltaY > 0 && index < images.length - 1) { // 휠을 아래로 돌린 경우
-        index++;
-        updateContent(index);
-      } else if (e.originalEvent.deltaY < 0 && index > 0) { // 휠을 위로 돌린 경우
-        index--;
-        updateContent(index);
-      } else if (e.originalEvent.deltaY > 0 && index >= images.length - 1) {
-        isScrollStopped = false; // 마지막 이미지가 보여진 후에는 스크롤이 다시 움직일 수 있도록 설정
-      } else if (e.originalEvent.deltaY < 0) {
-        isScrollStopped = false; // 휠을 위로 돌릴 때는 스크롤이 멈추지 않도록 설정
-      }
-    }
-  });
+  // // 마우스 휠 이벤트를 감지
+  // $(window).on('wheel', function (e) {
+  //   if (isScrollStopped) {
+  //     if (e.originalEvent.deltaY > 0 && index < images.length - 1) { // 휠을 아래로 돌린 경우
+  //       index++;
+  //       updateContent(index);
+  //     } else if (e.originalEvent.deltaY < 0 && index > 0) { // 휠을 위로 돌린 경우
+  //       index--;
+  //       updateContent(index);
+  //     } else if (e.originalEvent.deltaY > 0 && index >= images.length - 1) {
+  //       isScrollStopped = false; // 마지막 이미지가 보여진 후에는 스크롤이 다시 움직일 수 있도록 설정
+  //     } else if (e.originalEvent.deltaY < 0) {
+  //       isScrollStopped = false; // 휠을 위로 돌릴 때는 스크롤이 멈추지 않도록 설정
+  //     }
+  //   }
+  // });
 
   function updateContent(index) {
     var currentImg = $('.s_pro_left img');
