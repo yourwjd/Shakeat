@@ -208,6 +208,7 @@ liItems1.forEach(function(liItem) {
   });
 
 
+
 //Service Value 순차적 등장
   const valuebox = document.querySelectorAll('.valuebox');
 
@@ -239,6 +240,8 @@ liItems1.forEach(function(liItem) {
   valuebox.forEach(el => {
       observer.observe(el);
   });
+
+
 
 //testresult img 위치 값 계산
 
@@ -286,3 +289,57 @@ testresult.addEventListener('wheel',function(event){
             event.preventDefault();
         }
 }, false);
+
+
+
+//character 순차적 등장
+const character = document.querySelectorAll('#characterimg img');
+
+character.forEach((el, index) => {
+    el.style.transition = 'all 1s ease';
+    el.style.opacity = '1';
+});
+
+const characterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // 이미지가 화면에 보일 때 위치 변경
+            if (entry.target === character[0]) {
+                setTimeout(() => {
+                    entry.target.style.top = '39.5%';
+                });
+            } else if (entry.target === character[1]) {
+                setTimeout(() => {
+                    entry.target.style.left = '38.5%';
+                }, 100);
+            } else if (entry.target === character[2]) {
+                setTimeout(() => {
+                    entry.target.style.bottom = '12%';
+                }, 300);
+            } else if (entry.target === character[3]) {
+                setTimeout(() => {
+                    entry.target.style.right = '38.5%';
+                }, 400);
+            }
+        } else {
+            // 이미지가 화면에서 벗어났을 때 위치 초기화
+            if (entry.target === character[0]) {
+                entry.target.style.top = '';
+            } else if (entry.target === character[1]) {
+                entry.target.style.left = '';
+            } else if (entry.target === character[2]) {
+                entry.target.style.bottom = '';
+            } else if (entry.target === character[3]) {
+                entry.target.style.right = '';
+            }
+        }
+    });
+}, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+});
+
+character.forEach(el => {
+    characterObserver.observe(el);
+});
