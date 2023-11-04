@@ -67,18 +67,18 @@ function checkVisibility() {
 
 // 섹션 s_profile 폰 이미지 4초마다 바뀌도록
 
-// $(document).ready(function() {
-//     var images = $(".image");
-//     var currentIndex = 0;
+$(document).ready(function() {
+    var images = $(".image");
+    var currentIndex = 0;
   
-//     function toggleImages() {
-//       images.eq(currentIndex).removeClass("active");
-//       currentIndex = (currentIndex + 1) % images.length;
-//       images.eq(currentIndex).addClass("active");
-//     }
+    function toggleImages() {
+      images.eq(currentIndex).removeClass("active");
+      currentIndex = (currentIndex + 1) % images.length;
+      images.eq(currentIndex).addClass("active");
+    }
   
-//     setInterval(toggleImages, 4000); // 4초마다 이미지를 토글
-//   });
+    setInterval(toggleImages, 4000); // 4초마다 이미지를 토글
+  });
 
 
 
