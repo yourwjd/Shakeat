@@ -208,6 +208,37 @@ liItems1.forEach(function(liItem) {
   });
 
 
+//Service Value 순차적 등장
+  const valuebox = document.querySelectorAll('.valuebox');
+
+  valuebox.forEach((el, index) => {
+      el.style.transition = `all 0.5s ease ${index * 0.2}s`;
+    //   el.style.transform = 'translateY(50%)';
+  });
+  
+  const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+        } else {
+            entry.target.style.opacity = '0';
+        }
+
+        //   if (entry.isIntersecting) {
+        //       entry.target.style.transform = 'translateY(0)';
+        //   } else {
+        //       entry.target.style.transform = 'translateY(100%)';
+        //   }
+      });
+  }, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+  });
+  
+  valuebox.forEach(el => {
+      observer.observe(el);
+  });
 
 //testresult img 위치 값 계산
 

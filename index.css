@@ -140,7 +140,7 @@ section {
 }
 .bounce{
     display: inline-block;
-    animation: 3s bounce running infinite alternate var(--delay);
+    animation: 3.1s bounce running infinite alternate var(--delay);
 }
 @keyframes bounce {
     0% {
@@ -844,45 +844,61 @@ section {
     height: 100%;
     text-align: center;
 }
-#service li{
+.valuebox{
     width: 32%;
     border: solid calc(100vw * 2 / 1920) #FF1477;
     border-radius: calc(100vw * 70 / 1920);
     overflow: hidden;
 }
-#service div{
+.valuebox div{
     padding: 5% 0 3.5% 0;
     height: 35%;
     background-color: #FF1477;
 }
-#service div p{
+.valuebox div p{
     font-size: calc(100vw * 19 / 1920);
     margin-bottom: 2.1%;
 }
-#service div h3{
+.valuebox h3{
     font-size: calc(100vw * 28 / 1920);
     line-height: 150%;
 }
-#service li>p{
+.valuebox >p{
     padding: 10% 0 12% 0;
     height: 60%;
     font-size: calc(100vw * 19 / 1920);
     line-height: 150%;
 }
-#service li:nth-child(3)>p{
+#value3>p{
     padding-top: 8%;
 }
 
 #appintro{
+    display: flex;
     margin: 12.8% 0 6.4% 0;
     width: 100%;
     height: calc(100vw * 716 / 1920);
     background-image: url(./img/appintro.png);
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
+}
+#appintro img{
+    margin: calc(100vw * 56 / 1920) 0 0 calc(100vw * 181 / 1920);
+    width: calc(100vw * 701 / 1920);
+    height: calc(100vw * 1388 / 1920);
+    animation: slogan 1s ease infinite alternate;
+}
+@keyframes slogan {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-2%);
+    }
 }
 #appintro h2{
-    padding: 15.1% 0 12.9% 49.5%;
+    padding: 15.1% 0 12.9% 3.5%;
     font-size: calc(100vw * 48 / 1920);
     line-height: 150%;
 }
