@@ -77,7 +77,7 @@ $(document).ready(function() {
       images.eq(currentIndex).addClass("active");
     }
   
-    setInterval(toggleImages, 4000); // 4초마다 이미지를 토글
+    setInterval(toggleImages, 3000); // 3초마다 이미지를 토글
   });
 
 
@@ -174,35 +174,35 @@ window.addEventListener('scroll', () => {
   //   }
   // });
 
-  function updateContent(index) {
-    var currentImg = $('.s_pro_left img');
-    var newImg = $('<img>').attr('src', images[index]).hide();
+  // function updateContent(index) {
+  //   var currentImg = $('.s_pro_left img');
+  //   var newImg = $('<img>').attr('src', images[index]).hide();
 
-    currentImg.animate({ opacity: 0, marginTop: '-80px' }, 500, function () {
-      currentImg.remove();
-      $('.s_pro_left').append(newImg);
-      newImg.css({ opacity: 0, marginTop: '80px' }).show().animate({ opacity: 1, marginTop: '0' }, 500);
-    });
+  //   currentImg.animate({ opacity: 0, marginTop: '-80px' }, 500, function () {
+  //     currentImg.remove();
+  //     $('.s_pro_left').append(newImg);
+  //     newImg.css({ opacity: 0, marginTop: '80px' }).show().animate({ opacity: 1, marginTop: '0' }, 500);
+  //   });
 
-    if (index === 2) {  // 세 번째 이미지로 바뀔 때만 텍스트에 모션을 추가
-      var currentH1 = $('.s_pro_right h1');
-      var currentP = $('.s_pro_right p');
-      var newH1 = $('<h1>').html(textData[index - 1].h1).hide();
-      var newP = $('<p>').html(textData[index - 1].p).hide();
+  //   if (index === 2) {  // 세 번째 이미지로 바뀔 때만 텍스트에 모션을 추가
+  //     var currentH1 = $('.s_pro_right h1');
+  //     var currentP = $('.s_pro_right p');
+  //     var newH1 = $('<h1>').html(textData[index - 1].h1).hide();
+  //     var newP = $('<p>').html(textData[index - 1].p).hide();
 
-      currentH1.animate({ opacity: 0 }, 500, function () {
-        currentH1.remove();
-        $('.s_pro_right').append(newH1);
-        newH1.css({ opacity: 0 }).show().animate({ opacity: 1 }, 500);
-      });
+  //     currentH1.animate({ opacity: 0 }, 500, function () {
+  //       currentH1.remove();
+  //       $('.s_pro_right').append(newH1);
+  //       newH1.css({ opacity: 0 }).show().animate({ opacity: 1 }, 500);
+  //     });
 
-      currentP.animate({ opacity: 0 }, 500, function () {
-        currentP.remove();
-        $('.s_pro_right').append(newP);
-        newP.css({ opacity: 0 }).show().animate({ opacity: 1 }, 500);
-      });
-    };
-  };
+  //     currentP.animate({ opacity: 0 }, 500, function () {
+  //       currentP.remove();
+  //       $('.s_pro_right').append(newP);
+  //       newP.css({ opacity: 0 }).show().animate({ opacity: 1 }, 500);
+  //     });
+  //   };
+  // };
 
 
 

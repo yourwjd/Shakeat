@@ -118,27 +118,27 @@ let intervalId = setInterval(writeText, 80);
 //bg2 순차적 등장
 const p_set = document.querySelector('.p-circle');
 
-const image1 = document.querySelector('#p1');
-const image2 = document.querySelector('#p2');
-const image3 = document.querySelector('#p3');
+const circle1 = document.querySelector('#p1');
+const circle2 = document.querySelector('#p2');
+const circle3 = document.querySelector('#p3');
 
-image1.style.transition = 'all 0.5s ease 0s';
-image2.style.transition = 'all 0.5s ease 0.2s';
-image3.style.transition = 'all 0.5s ease 0.4s';
+circle1.style.transition = 'all 0.5s ease 0s';
+circle2.style.transition = 'all 0.5s ease 0.2s';
+circle3.style.transition = 'all 0.5s ease 0.4s';
 
     window.addEventListener('scroll', function() {
         const scrollPosition = window.scrollY;
 
         const p_setPosition = p_set.getBoundingClientRect().top - scrollPosition;
     
-        if (p_setPosition <= window.innerHeight * 2 && p_setPosition >= -window.innerHeight * 2) {
-            image1.style.transform = 'translateY(130%)';
-            image2.style.transform = 'translateY(130%)';
-            image3.style.transform = 'translateY(130%)';
+        if (p_setPosition <= window.innerHeight * 1.5 && p_setPosition >= -window.innerHeight * 1.5) {
+            circle1.style.transform = 'translateY(150%)';
+            circle2.style.transform = 'translateY(150%)';
+            circle3.style.transform = 'translateY(150%)';
         } else {
-            image1.style.transform = 'translateY(0px)';
-            image2.style.transform = 'translateY(0px)';
-            image3.style.transform = 'translateY(0px)';
+            circle1.style.transform = 'translateY(0px)';
+            circle2.style.transform = 'translateY(0px)';
+            circle3.style.transform = 'translateY(0px)';
         }
     });
 
