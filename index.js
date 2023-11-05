@@ -1,3 +1,41 @@
+//마우스 커서
+let mouse = document.getElementById("out");
+let mouseW = mouse.offsetWidth / 2;
+let mouseH = mouse.offsetHeight / 2;
+let targetX;
+let targetY;
+
+function mouseMoveout() {
+    mouse.style.left = ((targetX - mouseW - mouse.offsetLeft) * 0.1 + mouse.offsetLeft) + "px";
+    mouse.style.top = ((targetY - mouseH - mouse.offsetTop) * 0.1 + mouse.offsetTop) + "px";
+
+    requestAnimationFrame(mouseMoveout);
+};
+
+
+let dot = document.getElementById("in");
+let dotW = dot.offsetWidth / 2;
+let dotH = dot.offsetHeight / 2;
+let dotX;
+let dotY;
+
+function mouseMovein() {
+    dot.style.left = ((dotX - dotW - dot.offsetLeft) * 1 + dot.offsetLeft) + "px";
+    dot.style.top = ((dotY - dotH - dot.offsetTop) * 1 + dot.offsetTop) + "px";
+
+    requestAnimationFrame(mouseMovein);
+};
+
+document.onmousemove = function(e) {
+    targetX = e.clientX;
+    targetY = e.clientY;
+    dotX = e.clientX;
+    dotY = e.clientY;
+}
+mouseMoveout();
+mouseMovein();
+
+
 //내비게이션 바 이동
 const headerMenu = document.querySelectorAll("#header a");
 

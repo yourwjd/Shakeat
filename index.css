@@ -17,6 +17,7 @@ body{
     background: #101010;
     height: auto;
 
+    cursor: none;
 }
 li {
     list-style: none;
@@ -93,7 +94,35 @@ nav ul li:hover{
     height: auto;
 }
 
-/*-------------------------- section ----------------------------------------*/
+/*-------------------------- etc ----------------------------------------*/
+
+#out {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100vw * 40 / 1920);
+    height: calc(100vw * 40 / 1920);
+    border: solid calc(100vw * 2 / 1920) #ff147640;
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 100;
+}
+#in {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: calc(100vw * 10 / 1920);
+    height: calc(100vw * 10 / 1920);
+    background-color: #ff1477;
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 100;
+}
+
 #scroll-to-top-button {
     color: #fff;
     background-color: #FF1477;
@@ -117,6 +146,7 @@ nav ul li:hover{
     color: #000;
     background-color: #00DB4A;}
 
+/*-------------------------- section ----------------------------------------*/
 
 section {
     /* border: solid 1px red; */
