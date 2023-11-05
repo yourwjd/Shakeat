@@ -196,7 +196,7 @@ serveygraph.addEventListener('wheel', function(e) {
         serveygraph.style.left = Math.min(200, currentLeft + speed) + 'px';
         e.preventDefault();
     }
-    // serveygraph 이동 가능 범위를 벗어나면 기본 스크롤 동작을 수행합니다.
+    // serveygraph 이동 가능 범위를 벗어나면 기본 스크롤 동작
 }, false);
 
 

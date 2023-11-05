@@ -65,7 +65,7 @@ function checkVisibility() {
 
 
 
-// 섹션 s_profile 폰 이미지 4초마다 바뀌도록
+// 섹션 s_profile 폰 이미지 3초마다 바뀌도록
 
 $(document).ready(function() {
     var images = $(".image");
@@ -82,7 +82,26 @@ $(document).ready(function() {
 
 
 
+// 섹션 .s_h_main_l2 img 부분 이미지 왼쪽으로 슬라이드 효과
 
+window.addEventListener('scroll', function() {
+  var images = document.querySelectorAll('.s_h_main_l2 img');
+  var windowHeight = window.innerHeight;
+
+  images.forEach(function(image, index) {
+      var imageDistance = image.getBoundingClientRect().top;
+      var imageHeight = image.clientHeight;
+
+      // 이미지의 중간 부분이 화면 중간에 도달했을 때 모션 시작
+      if (imageDistance - windowHeight < 0 && imageDistance + imageHeight > windowHeight / 2) {
+          image.classList.remove('hidden');
+          setTimeout(function() {
+              image.style.transform = 'translateX(0)';
+              image.style.opacity = 1;
+          }, index * 200); // 이미지가 나타날 때 각각 0.2초 간격으로 나타나도록 설정
+      }
+  });
+});
 
 
 
@@ -98,136 +117,71 @@ window.addEventListener('scroll', () => {
       div.style.animationPlayState = 'running';
     } else {
       div.style.animationPlayState = 'paused';
-      div.style.animation = 'none'; // 애니메이션을 초기 상태로 돌립니다.
-      setTimeout(() => div.style.animation = '', 0); // 다음 렌더링 때 애니메이션을 다시 설정합니다.
+      div.style.animation = 'none'; 
+      setTimeout(() => div.style.animation = '', 0); 
     }
   });
 });
 
 
 
+// 섹션 .s_fr ul li 부분 텍스트효과
+
+window.addEventListener('scroll', function() {
+  const elements = document.querySelectorAll('.s_fr ul li');
+  elements.forEach(element => {
+    const rect = element.getBoundingClientRect();
+    if(rect.top >= 0 && rect.bottom <= window.innerHeight) {
+      element.style.animationPlayState = 'running';
+    }
+  });
+});
 
 
+// 섹션 .s_cal ul li 부분 텍스트효과
+
+window.addEventListener('scroll', function() {
+  const elements = document.querySelectorAll('.s_cal ul li');
+  elements.forEach(element => {
+    const rect = element.getBoundingClientRect();
+    if(rect.top >= 0 && rect.bottom <= window.innerHeight) {
+      element.style.animationPlayState = 'running';
+    }
+  });
+});
 
 
+// 섹션 .s_h_m2 부분
+
+window.addEventListener('scroll', function() {
+  var image = document.querySelector('.s_h_m2');
+  var ulImages = document.querySelectorAll('.s_h_main ul li img');
+  var windowHeight = window.innerHeight;
+
+  // ulImages 중 가장 마지막 이미지를 대상으로 활용
+  var lastImage = ulImages[ulImages.length - 1];
+  var lastImageDistance = lastImage.getBoundingClientRect().top;
+
+  if (lastImageDistance - windowHeight < 0) {
+    // 이미지가 화면 안으로 들어오면 2초 뒤에 나타나도록 설정
+    setTimeout(function() {
+      image.style.transform = 'translateY(0)';
+      image.style.opacity = 1;
+    }, 900); //0.9초 후에 모션 시작
+  }
+});
 
 
+// 섹션 .s_middle_t p에 나타나는 텍스트 효과
 
+window.addEventListener('scroll', function() {
+  var paragraph = document.querySelector('.s_middle_t .scroll-animation');
+  var windowHeight = window.innerHeight;
+  var paragraphDistance = paragraph.getBoundingClientRect().top;
 
-// 섹션 s_propmise 스크롤에 따라 이미지와 텍스트 변경
-
-// $(document).ready(function () {
-//   var section = $('#s_promise');
-//   var images = [
-    
-//     './img/pro_1.png',
-//     './img/pro_2.png',
-//     './img/pro_3.png',
-//     './img/pro_4.png',
-//     './img/pro_5.png',
-//     './img/pro_6.png'
-//   ];
-//   var textData = [
-//     {
-//       h1: '상세한 <br> 만남 유형 설정',
-//       p: '만나는 상황의 다양성을 주어 AI가 분석할 때 <br> 더욱 알맞은 음식을 추천해줘요.'
-//     },
-//     {
-//       h1: '시간과 날짜에 맞는 <br> 최적의 음식 추천',
-//       p: '식당의 오픈/클로즈 시간이나, 그 날에 맞는 <br> 음식을 AI가 추천해줘요.'
-//     }
-//   ];
-//   var index = 0;
-//   var isScrollStopped = true;
-
-  // // 페이지 스크롤 이벤트를 감지
-  // $(window).on('scroll', function () {
-  //   var scrollPos = $(window).scrollTop();
-  //   var sectionPos = section.offset().top;
-  //   var sectionBottomPos = sectionPos + section.height();
-
-  //   // 섹션에 도달하면 스크롤 멈춤
-  //   if (scrollPos >= sectionPos && scrollPos < sectionBottomPos && isScrollStopped) {
-  //     $('html, body').scrollTop(sectionPos + 150);
-  //   } else if (scrollPos < sectionPos || scrollPos >= sectionBottomPos) {
-  //     // 섹션을 벗어나면 스크롤이 다시 움직일 수 있도록 설정
-  //     isScrollStopped = true;
-  //     index = 0;
-  //     updateContent(index);
-  //   }
-  // });
-
-  // // 마우스 휠 이벤트를 감지
-  // $(window).on('wheel', function (e) {
-  //   if (isScrollStopped) {
-  //     if (e.originalEvent.deltaY > 0 && index < images.length - 1) { // 휠을 아래로 돌린 경우
-  //       index++;
-  //       updateContent(index);
-  //     } else if (e.originalEvent.deltaY < 0 && index > 0) { // 휠을 위로 돌린 경우
-  //       index--;
-  //       updateContent(index);
-  //     } else if (e.originalEvent.deltaY > 0 && index >= images.length - 1) {
-  //       isScrollStopped = false; // 마지막 이미지가 보여진 후에는 스크롤이 다시 움직일 수 있도록 설정
-  //     } else if (e.originalEvent.deltaY < 0) {
-  //       isScrollStopped = false; // 휠을 위로 돌릴 때는 스크롤이 멈추지 않도록 설정
-  //     }
-  //   }
-  // });
-
-  // function updateContent(index) {
-  //   var currentImg = $('.s_pro_left img');
-  //   var newImg = $('<img>').attr('src', images[index]).hide();
-
-  //   currentImg.animate({ opacity: 0, marginTop: '-80px' }, 500, function () {
-  //     currentImg.remove();
-  //     $('.s_pro_left').append(newImg);
-  //     newImg.css({ opacity: 0, marginTop: '80px' }).show().animate({ opacity: 1, marginTop: '0' }, 500);
-  //   });
-
-  //   if (index === 2) {  // 세 번째 이미지로 바뀔 때만 텍스트에 모션을 추가
-  //     var currentH1 = $('.s_pro_right h1');
-  //     var currentP = $('.s_pro_right p');
-  //     var newH1 = $('<h1>').html(textData[index - 1].h1).hide();
-  //     var newP = $('<p>').html(textData[index - 1].p).hide();
-
-  //     currentH1.animate({ opacity: 0 }, 500, function () {
-  //       currentH1.remove();
-  //       $('.s_pro_right').append(newH1);
-  //       newH1.css({ opacity: 0 }).show().animate({ opacity: 1 }, 500);
-  //     });
-
-  //     currentP.animate({ opacity: 0 }, 500, function () {
-  //       currentP.remove();
-  //       $('.s_pro_right').append(newP);
-  //       newP.css({ opacity: 0 }).show().animate({ opacity: 1 }, 500);
-  //     });
-  //   };
-  // };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 마우스 커스텀 
-
-var cursor = document.querySelector("#myMouse");
-var cursor2 = document.querySelector("#myMouse2");
-
-function updateCursor(e) {
-//   cursor.style.cssText = cursor2.style.cssText = "left: " + e.clientX + "px; top: " + e.clientY + "px";
-}
-
-document.addEventListener("mousemove", updateCursor);
-
-setInterval(function () {
-//   updateCursor({ clientX: event.clientX, clientY: event.clientY });
-}, 6);
+  if (paragraphDistance - windowHeight < 0) {
+    setTimeout(function() {
+      paragraph.style.opacity = 1;
+    }, 1500); // 1.5초 후에 모션 시작
+  }
+});
