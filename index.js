@@ -329,6 +329,41 @@ testresult.addEventListener('wheel',function(event){
 }, false);
 
 
+//meeting 스크롤 시 이미지 변환
+$(window).scroll(function(){
+    var windowHeight = $(window).height();  // 브라우저 창 높이
+    var windowScrollTop = $(window).scrollTop();  // 현재 스크롤 위치
+
+    // 각 텍스트 요소의 중앙 위치 계산
+    var step1Middle = $('#step1').offset().top + $('#step1').height() / 2;
+    var step2Middle = $('#step2').offset().top + $('#step2').height() / 2;
+    var step3Middle = $('#step3').offset().top + $('#step3').height() / 2;
+    var step4Middle = $('#step4').offset().top + $('#step4').height() / 2;
+
+    // 각 텍스트 요소의 중앙이 화면 중앙에 위치하는지 확인
+    if(windowScrollTop <= step1Middle - windowHeight / 2){
+        $('#img1').css('opacity', '1');
+        $('#img2').css('opacity', '0');
+        $('#img3').css('opacity', '0');
+        $('#img4').css('opacity', '0');
+    } else if(windowScrollTop <= step2Middle - windowHeight / 2){
+        $('#img1').css('opacity', '0');
+        $('#img2').css('opacity', '1');
+        $('#img3').css('opacity', '0');
+        $('#img4').css('opacity', '0');
+    } else if(windowScrollTop <= step3Middle - windowHeight / 2){
+        $('#img1').css('opacity', '0');
+        $('#img2').css('opacity', '0');
+        $('#img3').css('opacity', '1');
+        $('#img4').css('opacity', '0');
+    } else if(windowScrollTop <= step4Middle - windowHeight / 2){
+        $('#img1').css('opacity', '0');
+        $('#img2').css('opacity', '0');
+        $('#img3').css('opacity', '0');
+        $('#img4').css('opacity', '1');
+    }
+});
+
 
 //character 순차적 등장
 const character = document.querySelectorAll('#characterimg img');
