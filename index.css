@@ -135,7 +135,7 @@ section {
 
 #main{
     width: 100%;
-    height: calc(100vw * 1080 / 1920);
+    height: calc(100vw * 1200 / 1920);
     text-align: center;
     overflow: hidden;
     background-image: url(./img/mainbg.gif);
@@ -148,7 +148,7 @@ section {
     margin: 13% auto 0 auto;
 }
 #main h2{
-    margin-top: 2%;
+    margin-top: 3%;
     font-size: calc(100vw * 37 / 1920);
     color: #fff;
 }
@@ -185,7 +185,7 @@ section {
 
 #m-2{
     width: 31%;
-    margin-top: 3%;
+    margin-top: calc(100vw * 93 / 1920);
 }
 
 #video {
@@ -230,7 +230,7 @@ section {
 }
 #bg p{
     color: #C9C9C9;
-    font-size: calc(100vw * 32 / 1920);
+    font-size: calc(100vw * 28 / 1920);
     padding-top: 7.9%;
 }
 #bg h2{
@@ -240,7 +240,7 @@ section {
     line-height: 150%;
 }
 #bgtext1{
-    margin-top: 3.6%;
+    margin-top: calc(100vw * 75 / 1920);
 }
 #bg-1{
     position: relative;
@@ -463,9 +463,9 @@ section {
     padding: 5.6% 10% 6.1% 0;
 }
 #serveytext >p{
-    margin-bottom: 1.4%;
+    margin-bottom: calc(100vw * 23 / 1920);
     color: #C9C9C9;
-    font-size: calc(100vw * 32 / 1920);
+    font-size: calc(100vw * 28 / 1920);
 }
 #serveytext div{
     display: flex;
@@ -556,9 +556,9 @@ section {
     height: auto;
 }
 #insighttext p:nth-child(1){
-    margin-bottom: 7%;
+    margin-bottom: calc(100vw * 43 / 1920);
     color: #C9C9C9;
-    font-size: calc(100vw * 32 / 1920);
+    font-size: calc(100vw * 28 / 1920);
 }
 #insighttext h3{
     margin-bottom: 40%;
@@ -587,7 +587,7 @@ section {
 }
 #keywords >p{
     color: #C9C9C9;
-    font-size: calc(100vw * 35 / 1920);
+    font-size: calc(100vw * 32 / 1920);
 }
 #keywords ul{
     display: flex;
@@ -686,16 +686,6 @@ section {
     font-size: calc(100vw * 40 / 1920);
     line-height: 150%;
 }
-#goal h3 span{
-    display: inline-block;
-    animation: .8s shake infinite alternate;
-}
-@keyframes shake {
-    0% { transform: skewX(15deg); }
-    10% { transform: skewX(-15deg); }
-    20% { transform: skewX(0deg); }
-    100% { transform: skewX(0deg); }  
-  }
 
 #goal p:nth-child(3) {
     margin-top: 4.2%;
@@ -847,9 +837,9 @@ section {
     height: auto;
 }
 #valuetext p{
-    margin-bottom: 3.5%;
+    margin-bottom: calc(100vw * 43 / 1920);
     color: #C9C9C9;
-    font-size: calc(100vw * 32 / 1920);
+    font-size: calc(100vw * 28 / 1920);
 }
 #valuetext h3{
     margin-bottom: 7.2%;
@@ -892,7 +882,7 @@ section {
 
 #appintro{
     display: flex;
-    margin: 12.8% 0 6.4% 0;
+    margin-top: 12.8%;
     width: 100%;
     height: calc(100vw * 716 / 1920);
     background-image: url(./img/appintro.png);
@@ -922,22 +912,21 @@ section {
 
 #s4tt{
     position: relative;
-    margin-bottom: 6.3%;
     width: 100%;
-    height: auto;
+    height: calc(100vw * 1200 / 1920);
     text-align: center;
     background-image: url(./img/testbg.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
 #s4tt h3{
-    padding-top: 9.3%;
+    padding-top: 10%;
     font-size: calc(100vw * 30 / 1920);
     line-height: 150%;
 }
 #s4tt p{
-    margin-bottom: -3%;
-    padding-top: 1.3%;
+    margin-bottom: -3.5%;
+    padding-top: calc(100vw * 25 / 1920);
     font-size: calc(100vw * 20 / 1920);
     line-height: 150%;
 }
@@ -956,7 +945,7 @@ section {
     width: calc(100vw * 323.5 / 1920); 
     height: calc(100vw * 640 / 1920);
 
-    top: 35%;
+    top: 34.8%;
     left: 41.5%;
 }
 #s4tt iframe{
@@ -975,7 +964,7 @@ section {
 #testresult{
     position: relative;
     width: 100%;
-    height: calc(100vw * 1080 / 1920);
+    height: calc(100vw * 1200 / 1920);
     background: #FF1477;
     overflow: hidden;
 }
@@ -998,10 +987,10 @@ section {
 #testresult article {
     position: relative;
     position: absolute;
-    top: 73%;
-    left: -10.3%;
-    width: calc(100vw * 2299 / 1920);
-    height: calc(100vw * 2299 / 1920);
+    top: 67%;
+    left: -12.8%;
+    width: calc(100vw * 2400 / 1920);
+    height: calc(100vw * 2400 / 1920);
     border-radius: 50%;
 
     transition: transform 0.5s ease;
@@ -1787,13 +1776,14 @@ section {
     width: calc(100vw * 650 / 1920);
     height: calc(100vw * 484 / 1920);
 
-    animation: logogrid 5s ease infinite ;
+    animation: logogrid 4s ease infinite ;
 
     z-index: 1;
 }
 @keyframes logogrid {
     0% { opacity: 0; }
-    50% { opacity: 0; }
+    30% { opacity: 0; }
+    40% { opacity: 1; }
     90% { opacity: 1; }
     100% { opacity: 0; }
   }
@@ -1811,17 +1801,18 @@ section {
 }
 
 #logo-s img:nth-child(1){
-    animation: moveToLeft 5s ease infinite ;
+    animation: moveToLeft 4s ease infinite ;
   }
   
   #logo-s img:nth-child(3){
-    animation: moveToRight 5s ease infinite ;
+    animation: moveToRight 4s ease infinite ;
   }
 
   @keyframes moveToLeft {
     0% { top:49.6%; left: 49%; }
     5% { top:49.6%; left: 49%; }
-    25% { top:49.6%; left: 49%; }
+    20% { top:49.6%; left: 49%; }
+    40% { top:49.6%; left: 29%; }
     50% { top:49.6%; left: 29%; }
     90% { top:49.6%; left: 29%; }
     100% { top:49.6%; left: 49%; }
@@ -1830,7 +1821,8 @@ section {
   @keyframes moveToRight {
     0% { top:49.6%; left: 49%; }
     5% { top:49.6%; left: 49%; }
-    25% { top:49.6%; left: 49%; }
+    20% { top:49.6%; left: 49%; }
+    40% { top:49.6%; left: 69.7%; }
     50% { top:49.6%; left: 69.7%; }
     90% { top:49.6%; left: 69.7%; }
     100% { top:49.6%; left: 49%; }
@@ -1880,15 +1872,15 @@ section {
   }
   
   #color article div:nth-child(2) {
-    animation-delay: 0.8s;
+    animation-delay: 0.5s;
   }
   
   #color article div:nth-child(3) {
-    animation-delay: 1.6s;
+    animation-delay: 1s;
   }
   
   #color article div:nth-child(4) {
-    animation-delay: 2.4s;
+    animation-delay: 1.5s;
   }
   
   @keyframes slideIn {
@@ -2012,7 +2004,8 @@ section {
 
 
 #icon{
-    padding-top: 10.9%;
+    margin-bottom: 13%;
+    padding-top: 10%;
     width: 100%;
     height: auto;
     overflow: hidden;
@@ -2021,7 +2014,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 9.5%;
+    margin-bottom: 8%;
     padding: 0 10%;
     width: 80%;
 }
@@ -2069,6 +2062,13 @@ section {
     0% { transform: translateX(-50%); }
     100% { transform: translateX(0); }
 }
+#icon>p{
+    color: #494949;
+    float: right;
+    margin: 4% 2% 0 0;
+    font-size: calc(100vw * 10 / 1920);
+}
+
 
 #character{
     position: relative;
@@ -2108,7 +2108,7 @@ section {
 }
 #gg{
     width: 14.2%;
-    bottom: 10%;
+    bottom: -10%;
     left: 38.85%;
 }
 #yy{

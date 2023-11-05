@@ -107,12 +107,12 @@ function writeText() {
         clearInterval(intervalId);
         setTimeout(() => {
             bgtexts.forEach(bgtext => bgtext.innerHTML = '');
-            intervalId = setInterval(writeText, 100);
-        }, 1000); // 1000ms = 1s
+            intervalId = setInterval(writeText, 80);
+        }, 1500); // 1000ms = 1s
     }
 }
 
-let intervalId = setInterval(writeText, 100);
+let intervalId = setInterval(writeText, 80);
 
 
 //bg2 순차적 등장
@@ -132,9 +132,9 @@ image3.style.transition = 'all 0.5s ease 0.4s';
         const p_setPosition = p_set.getBoundingClientRect().top - scrollPosition;
     
         if (p_setPosition <= window.innerHeight * 2 && p_setPosition >= -window.innerHeight * 2) {
-            image1.style.transform = 'translateY(150%)';
-            image2.style.transform = 'translateY(150%)';
-            image3.style.transform = 'translateY(150%)';
+            image1.style.transform = 'translateY(130%)';
+            image2.style.transform = 'translateY(130%)';
+            image3.style.transform = 'translateY(130%)';
         } else {
             image1.style.transform = 'translateY(0px)';
             image2.style.transform = 'translateY(0px)';
@@ -213,9 +213,9 @@ liItems1.forEach(function(liItem) {
   const valuebox = document.querySelectorAll('.valuebox');
 
   valuebox.forEach((el, index) => {
+    el.style.transitionDelay = '1s'; // 딜레이 추가  
       el.style.transition = `all 0.5s ease ${index * 0.2}s`;
-    //   el.style.transform = 'translateY(50%)';
-  });
+    });
   
   const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -315,7 +315,7 @@ const characterObserver = new IntersectionObserver(entries => {
             } else if (entry.target === character[2]) {
                 setTimeout(() => {
                     entry.target.style.bottom = '12%';
-                }, 300);
+                }, 100);
             } else if (entry.target === character[3]) {
                 setTimeout(() => {
                     entry.target.style.right = '38.5%';
