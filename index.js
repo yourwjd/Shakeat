@@ -26,7 +26,7 @@ function mouseMovein() {
     requestAnimationFrame(mouseMovein);
 };
 
-document.onmousemove = function(e) {
+document.onmousemove = function (e) {
     targetX = e.clientX;
     targetY = e.clientY;
     dotX = e.clientX;
@@ -45,27 +45,27 @@ const planning = document.querySelector("#bg");
 const service = document.querySelector("#s4tt");
 const design = document.querySelector("#logo");
 
-headerMenu[0].onclick = function(event) {
+headerMenu[0].onclick = function (event) {
     event.preventDefault();
     logo.scrollIntoView({ behavior: 'smooth' });
 };
 
-headerMenu[1].onclick = function(event) {
+headerMenu[1].onclick = function (event) {
     event.preventDefault();
     video.scrollIntoView({ behavior: 'smooth' });
 };
 
-headerMenu[2].onclick = function(event) {
+headerMenu[2].onclick = function (event) {
     event.preventDefault();
     planning.scrollIntoView({ behavior: 'smooth' });
 };
 
-headerMenu[3].onclick = function(event) {
+headerMenu[3].onclick = function (event) {
     event.preventDefault();
     service.scrollIntoView({ behavior: 'smooth' });
 };
 
-headerMenu[4].onclick = function(event) {
+headerMenu[4].onclick = function (event) {
     event.preventDefault();
     design.scrollIntoView({ behavior: 'smooth' });
 };
@@ -77,14 +77,14 @@ var myHeader = document.getElementById("header"); /*header 변수 할당*/
 var isHeaderVisible = true; /* 헤더가 보이는지 여부를 나타내는 변수 추가 */
 var previousScrollPosition = 0; /* 이전 스크롤 위치를 저장하는 변수 추가 */
 
-window.addEventListener("scroll", function(){ /*스크롤 시*/
+window.addEventListener("scroll", function () { /*스크롤 시*/
     var currentScrollPosition = window.scrollY; /* 현재 스크롤 위치를 저장 */
 
-    if(currentScrollPosition > previousScrollPosition && currentScrollPosition > 1100 && isHeaderVisible){ /*스크롤 y값이 1100이 넘으면*/
+    if (currentScrollPosition > previousScrollPosition && currentScrollPosition > 1100 && isHeaderVisible) { /*스크롤 y값이 1100이 넘으면*/
         myHeader.style.top = -150 + "px"; /*헤더 css의 top위치를 -100px 한다*/
         isHeaderVisible = false;
     }
-    else if ((currentScrollPosition < previousScrollPosition || currentScrollPosition <= 200) && !isHeaderVisible){ /*200을 넘지 않을 시*/
+    else if ((currentScrollPosition < previousScrollPosition || currentScrollPosition <= 200) && !isHeaderVisible) { /*200을 넘지 않을 시*/
         myHeader.style.top = 0; /*헤더 css의 top위치를 0px 한다*/
         isHeaderVisible = true;
     }
@@ -94,7 +94,9 @@ window.addEventListener("scroll", function(){ /*스크롤 시*/
     // }
 
     previousScrollPosition = currentScrollPosition; /* 이전 스크롤 위치 업데이트 */
-}); 
+});
+
+
 
 //스크롤탑 버튼
 function scrollToTop() {
@@ -114,6 +116,67 @@ window.addEventListener('scroll', function () {
 });
 var button = document.querySelector("#scroll-to-top-button");
 button.addEventListener("click", scrollToTop);
+
+
+
+//비디오 버튼
+//소리, 멈춤, 재생 버튼 제어
+const videoS = document.getElementById('myVideo');
+const muteButton = document.getElementById('muteimg');
+const pauseButton = document.getElementById('pauseimg');
+const fullButton = document.getElementById('fullimg');
+
+let isFullscreen = false;
+
+muteButton.addEventListener('click', () => {
+    if (videoS.muted) {
+        videoS.muted = false;
+        muteButton.src = './img/sound.png';
+    } else {
+        videoS.muted = true;
+        muteButton.src = './img/mute.png';
+    }
+});
+
+let isPlaying = false;
+
+pauseButton.addEventListener('click', function () {
+    if (isPlaying) {
+        videoS.pause();
+        isPlaying = false;
+        pauseButton.src = './img/pause.png'
+    } else {
+        videoS.play();
+        isPlaying = true;
+        pauseButton.src = './img/play.png'
+    }
+});
+
+fullButton.addEventListener('click', function() {
+    if (!isFullscreen) { // 전체화면이 아니면 전체화면으로
+        if (videoS.requestFullscreen) {
+            videoS.requestFullscreen(); // 표준 메소드
+        } else if (videoS.mozRequestFullScreen) { // Firefox
+            videoS.mozRequestFullScreen();
+        } else if (videoS.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            videoS.webkitRequestFullscreen();
+        } else if (videoS.msRequestFullscreen) { // IE/Edge
+            videoS.msRequestFullscreen();
+        }
+        isFullscreen = true;
+    } else { // 전체화면이면 전체화면 종료
+        if (document.exitFullscreen) {
+            document.exitFullscreen(); // 표준 메소드
+        } else if (document.mozCancelFullScreen) { // Firefox
+            document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) { // Chrome, Safari and Opera
+            document.webkitExitFullscreen();
+        } else if (document.msExitFullscreen) { // IE/Edge
+            document.msExitFullscreen();
+        }
+        isFullscreen = false;
+    }
+});
 
 
 //background  타이핑 효과
@@ -153,6 +216,7 @@ function writeText() {
 let intervalId = setInterval(writeText, 80);
 
 
+
 //bg2 순차적 등장
 const p_set = document.querySelector('.p-circle');
 
@@ -164,27 +228,29 @@ circle1.style.transition = 'all 0.5s ease 0s';
 circle2.style.transition = 'all 0.5s ease 0.2s';
 circle3.style.transition = 'all 0.5s ease 0.4s';
 
-    window.addEventListener('scroll', function() {
-        const scrollPosition = window.scrollY;
+window.addEventListener('scroll', function () {
+    const scrollPosition = window.scrollY;
 
-        const p_setPosition = p_set.getBoundingClientRect().top - scrollPosition;
-    
-        if (p_setPosition <= window.innerHeight * 1.5 && p_setPosition >= -window.innerHeight * 1.5) {
-            circle1.style.transform = 'translateY(150%)';
-            circle2.style.transform = 'translateY(150%)';
-            circle3.style.transform = 'translateY(150%)';
-        } else {
-            circle1.style.transform = 'translateY(0px)';
-            circle2.style.transform = 'translateY(0px)';
-            circle3.style.transform = 'translateY(0px)';
-        }
-    });
+    const p_setPosition = p_set.getBoundingClientRect().top - scrollPosition;
+
+    if (p_setPosition <= window.innerHeight * 1.5 && p_setPosition >= -window.innerHeight * 1.5) {
+        circle1.style.transform = 'translateY(150%)';
+        circle2.style.transform = 'translateY(150%)';
+        circle3.style.transform = 'translateY(150%)';
+    } else {
+        circle1.style.transform = 'translateY(0px)';
+        circle2.style.transform = 'translateY(0px)';
+        circle3.style.transform = 'translateY(0px)';
+    }
+});
+
+
 
 //user survey 가로 스크롤
 var servey = document.getElementById('servey');
 var serveygraph = document.getElementById('serveygraph');
 
-serveygraph.addEventListener('wheel', function(e) {
+serveygraph.addEventListener('wheel', function (e) {
     var speed = 650;  // 이동 속도
     var currentLeft = parseInt(window.getComputedStyle(serveygraph).left, 10);
 
@@ -212,51 +278,51 @@ var ymj = document.querySelector('#ymj');
 var ksj = document.querySelector('#ksj');
 var kar = document.querySelector('#kar');
 
-liItems1.forEach(function(liItem) {
-    liItem.addEventListener('mouseover', function() {
+liItems1.forEach(function (liItem) {
+    liItem.addEventListener('mouseover', function () {
         ymj.style.transition = "opacity 1s ease-in-out";
         ymj.style.opacity = 1;
     });
-    liItem.addEventListener('mouseout', function() {
+    liItem.addEventListener('mouseout', function () {
         ymj.style.transition = "none";
         ymj.style.opacity = 0;
     });
-  });
-  
-  liItems2.forEach(function(liItem) {
-    liItem.addEventListener('mouseover', function() {
+});
+
+liItems2.forEach(function (liItem) {
+    liItem.addEventListener('mouseover', function () {
         ksj.style.transition = "opacity 1s ease-in-out";
         ksj.style.opacity = 1;
     });
-    liItem.addEventListener('mouseout', function() {
+    liItem.addEventListener('mouseout', function () {
         ksj.style.transition = "none";
         ksj.style.opacity = 0;
     });
-  });
-  
-  liItems3.forEach(function(liItem) {
-    liItem.addEventListener('mouseover', function() {
+});
+
+liItems3.forEach(function (liItem) {
+    liItem.addEventListener('mouseover', function () {
         kar.style.transition = "opacity 1s ease-in-out";
         kar.style.opacity = 1;
     });
-    liItem.addEventListener('mouseout', function() {
+    liItem.addEventListener('mouseout', function () {
         kar.style.transition = "none";
         kar.style.opacity = 0;
     });
-  });
+});
 
 
 
 //Service Value 순차적 등장
-  const valuebox = document.querySelectorAll('.valuebox');
+const valuebox = document.querySelectorAll('.valuebox');
 
-  valuebox.forEach((el, index) => {
+valuebox.forEach((el, index) => {
     el.style.transitionDelay = '1s'; // 딜레이 추가  
-      el.style.transition = `all 0.5s ease ${index * 0.2}s`;
-    });
-  
-  const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
+    el.style.transition = `all 0.5s ease ${index * 0.2}s`;
+});
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
         } else {
@@ -268,16 +334,16 @@ liItems1.forEach(function(liItem) {
         //   } else {
         //       entry.target.style.transform = 'translateY(100%)';
         //   }
-      });
-  }, {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.1
-  });
-  
-  valuebox.forEach(el => {
-      observer.observe(el);
-  });
+    });
+}, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    });
+
+valuebox.forEach(el => {
+    observer.observe(el);
+});
 
 
 
@@ -286,51 +352,51 @@ liItems1.forEach(function(liItem) {
 var proBoxes = document.querySelectorAll('.proBox');
 var centerX = window.innerWidth / 2;
 var centerY = window.innerHeight / 2;
-var radius = window.innerWidth * 1500 / 1920; 
+var radius = window.innerWidth * 1500 / 1920;
 var angleStep = 360 / proBoxes.length;
 
-proBoxes.forEach(function(proBox, i) {
-  var angle = angleStep * i;
-  var x = centerX + radius * Math.cos(angle * Math.PI / 180) - proBox.getBoundingClientRect().width / 2;
-  var y = centerY + radius * Math.sin(angle * Math.PI / 180) - proBox.getBoundingClientRect().height / 2;
-  proBox.style.transform = 'translate(' + (x - centerX) + 'px, ' + (y - centerY) + 'px)';
+proBoxes.forEach(function (proBox, i) {
+    var angle = angleStep * i;
+    var x = centerX + radius * Math.cos(angle * Math.PI / 180) - proBox.getBoundingClientRect().width / 2;
+    var y = centerY + radius * Math.sin(angle * Math.PI / 180) - proBox.getBoundingClientRect().height / 2;
+    proBox.style.transform = 'translate(' + (x - centerX) + 'px, ' + (y - centerY) + 'px)';
 });
 
 //testresult img 돌아가게
 var testresult = document.querySelector('#testresult article');
 
-var counter =0;
-var proCount =0;
+var counter = 0;
+var proCount = 0;
 
-testresult.addEventListener('wheel',function(event){
+testresult.addEventListener('wheel', function (event) {
     var testResult = document.querySelector('#testresult article');
     var proBox = document.querySelectorAll('.proBox');
 
-        if (event.deltaY < 0) {
-            counter += 22.5;
-            proCount += 1;
-            testResult.style.transform = "rotate("+counter+"deg)";
-            proBox.forEach(function(box) {
-            });
-            if(proCount > 15){proCount = 0}
+    if (event.deltaY < 0) {
+        counter += 22.5;
+        proCount += 1;
+        testResult.style.transform = "rotate(" + counter + "deg)";
+        proBox.forEach(function (box) {
+        });
+        if (proCount > 15) { proCount = 0 }
 
-            event.preventDefault();
+        event.preventDefault();
 
-        }else if (event.deltaY > 0) {	
-            counter -= 22.5;
-            proCount -= 1;
-            testResult.style.transform = "rotate("+counter+"deg)";
-            proBox.forEach(function(box) {
-            });
-            if(proCount < -15 ){proCount = 0}
+    } else if (event.deltaY > 0) {
+        counter -= 22.5;
+        proCount -= 1;
+        testResult.style.transform = "rotate(" + counter + "deg)";
+        proBox.forEach(function (box) {
+        });
+        if (proCount < -15) { proCount = 0 }
 
-            event.preventDefault();
-        }
+        event.preventDefault();
+    }
 }, false);
 
 
 //meeting 스크롤 시 이미지 변환
-$(window).scroll(function(){
+$(window).scroll(function () {
     var windowHeight = $(window).height();  // 브라우저 창 높이
     var windowScrollTop = $(window).scrollTop();  // 현재 스크롤 위치
 
@@ -341,22 +407,22 @@ $(window).scroll(function(){
     var step4Middle = $('#step4').offset().top + $('#step4').height() / 2;
 
     // 각 텍스트 요소의 중앙이 화면 중앙에 위치하는지 확인
-    if(windowScrollTop <= step1Middle - windowHeight / 2){
+    if (windowScrollTop <= step1Middle - windowHeight / 2) {
         $('#img1').css('opacity', '1');
         $('#img2').css('opacity', '0');
         $('#img3').css('opacity', '0');
         $('#img4').css('opacity', '0');
-    } else if(windowScrollTop <= step2Middle - windowHeight / 2){
+    } else if (windowScrollTop <= step2Middle - windowHeight / 2) {
         $('#img1').css('opacity', '0');
         $('#img2').css('opacity', '1');
         $('#img3').css('opacity', '0');
         $('#img4').css('opacity', '0');
-    } else if(windowScrollTop <= step3Middle - windowHeight / 2){
+    } else if (windowScrollTop <= step3Middle - windowHeight / 2) {
         $('#img1').css('opacity', '0');
         $('#img2').css('opacity', '0');
         $('#img3').css('opacity', '1');
         $('#img4').css('opacity', '0');
-    } else if(windowScrollTop <= step4Middle - windowHeight / 2){
+    } else if (windowScrollTop <= step4Middle - windowHeight / 2) {
         $('#img1').css('opacity', '0');
         $('#img2').css('opacity', '0');
         $('#img3').css('opacity', '0');
@@ -408,10 +474,10 @@ const characterObserver = new IntersectionObserver(entries => {
         }
     });
 }, {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-});
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    });
 
 character.forEach(el => {
     characterObserver.observe(el);

@@ -49,7 +49,7 @@ header {
     position: fixed; 
     top: 0;
     width: 100%;
-    height: 12%;
+    height: 13%;
     display: flex;
     z-index: 3;
     transition: all .3s;
@@ -102,7 +102,7 @@ nav ul li:hover{
     left: 0;
     width: calc(100vw * 40 / 1920);
     height: calc(100vw * 40 / 1920);
-    border: solid calc(100vw * 2 / 1920) #ff147640;
+    border: solid calc(100vw * 2 / 1920) #00DB4A40;
     border-radius: 50%;
 
     pointer-events: none;
@@ -115,7 +115,7 @@ nav ul li:hover{
     left: 0%;
     width: calc(100vw * 10 / 1920);
     height: calc(100vw * 10 / 1920);
-    background-color: #ff1477;
+    background-color: #00DB4A;
     border-radius: 50%;
 
     pointer-events: none;
@@ -124,11 +124,11 @@ nav ul li:hover{
 }
 
 #scroll-to-top-button {
-    color: #fff;
-    background-color: #FF1477;
+    color: #000;
+    background-color: #00DB4A;
     position: fixed;
     right: 0;
-    margin-right: 7%;
+    margin-right: 3%;
     bottom: calc(100vw * 50 / 1920);
     display: inline-block;
     border: none;
@@ -143,8 +143,8 @@ nav ul li:hover{
 }
 
 #scroll-to-top-button:hover {
-    color: #000;
-    background-color: #00DB4A;}
+    color: #fff;
+    background-color: #FF1477;}
 
 /*-------------------------- section ----------------------------------------*/
 
@@ -221,6 +221,7 @@ section {
 }
 
 #video {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -229,16 +230,42 @@ section {
 #video video {
     width: 100%;
 }
-
-/* .dotted-line {
-    width: 2px;
-    height: 441px;
+#muteimg{
     position: absolute;
-    top: 2950px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(to bottom, rgba(255, 20, 119, 0) 50%, #FF1477 50%);
-    background-size: 2px 20px;
+    bottom: calc(100vw * 30 / 1920); right: calc(100vw * 100 / 1920);
+    width: calc(100vw * 30 / 1920); 
+    height: calc(100vw * 30 / 1920);
+}
+#pauseimg{
+    position: absolute;
+    bottom: calc(100vw * 30 / 1920); left: calc(100vw * 40 / 1920);
+    width: calc(100vw * 30 / 1920); 
+    height: calc(100vw * 30 / 1920);
+}
+#fullimg{
+    position: absolute;
+    bottom: calc(100vw * 30 / 1920); right: calc(100vw * 40 / 1920);
+    width: calc(100vw * 30 / 1920); 
+    height: calc(100vw * 30 / 1920);
+}
+
+/* #playButton{
+    position: absolute;
+    bottom: 0; right: 0;
+    margin: 2% 2%;
+    width: 100px; height: 50px;
+    border-radius: 50px;
+    border: none;
+    background-color: #FFB1C3;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Binggrae';
+}
+#playButton:hover{
+    transition: .5s;
+    background-color: #ffb1c382;
+    color: #fff;
+
 } */
 
 #bg{
@@ -365,7 +392,7 @@ section {
 }
 .dashed-line2 span:nth-child(1) {
     position: absolute;
-    top: calc(100vw * 115 / 1920);
+    top: calc(100vw * 113 / 1920);
     left: 25%;
     width: 50%;
     height: calc(100vw * 100 / 1920);
@@ -656,7 +683,7 @@ section {
 #keywords li:nth-child(4){
     /* background: #00db49; */
     padding-bottom: 11.5%;
-    background: linear-gradient(-45deg, #009e15, #0db482, #1fc456, #0db482, #009e15);
+    background: linear-gradient(-45deg, #009e15, #0db466, #00DB4A, #0db466, #009e15);
     background-size: 400% 400%;
     animation: gradient 5s ease infinite;
 }
@@ -943,17 +970,20 @@ section {
 }
 
 #s4tt{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: relative;
-    width: 100%;
+    padding: 0 20%;
+    width: 60%;
     height: calc(100vw * 1200 / 1920);
-    text-align: center;
     background-image: url(./img/testbg.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 #s4tt h3{
     padding-top: 10%;
-    font-size: calc(100vw * 30 / 1920);
+    font-size: calc(100vw * 36 / 1920);
     line-height: 150%;
 }
 #s4tt p{
@@ -963,27 +993,24 @@ section {
     line-height: 150%;
 }
 #s4tt h4 {
-    color: #00DB4A;
-    position: absolute;
-    right: 0;
-    text-align: left;
+    margin-top: 10%;
     font-size: calc(100vw * 16/1920);
-    margin-top: -25%;
+    font-weight: 400;
+    color: #00DB4A;
     line-height: 139.5%;
-    margin-right: calc(100vw * 553/ 1920);
 }
 #s4tt img{
     position: absolute;
-    width: calc(100vw * 323.5 / 1920); 
-    height: calc(100vw * 640 / 1920);
+    width: calc(100vw * 392/ 1920);
+    height: calc(100vw * 776/ 1920);
 
-    top: 34.8%;
-    left: 41.5%;
+    top: 17.7%;
+    left: 56.6%;
 }
 #s4tt iframe{
-    border-radius: calc(100vw * 60 / 1920);
-    width: calc(100vw * 414 / 1920); 
-    height:calc(100vw * 870 / 1920);
+    border-radius: calc(120vw * 60 / 1920);
+    width: calc(120vw * 414 / 1920); 
+    height:calc(120vw * 870 / 1920);
     overflow: hidden;
 
     -moz-transform: scale(0.7, 0.7);
@@ -1380,14 +1407,15 @@ section {
     opacity: 0;
     transition: opacity 10s;
   }
-
+/* 
   .bg_gg {
     width: calc(100vw * 486/1920);
-    margin-top: -20%;
+    margin-top: -22%;
     margin-left: 82%;
     opacity: 0.5;
     overflow: hidden;
-  }
+    z-index: 2;
+  } */
 
 
   .slide-in {
@@ -1445,8 +1473,10 @@ section {
     justify-content: space-between;
     overflow: hidden;
     position: relative;
-    padding-top: calc(100vw * 183/ 1920);
+    margin-top: -32%;
+    padding-top: calc(100vw * 793/ 1920);
     padding-bottom: calc(100vw * 108/ 1920);
+    z-index: 2;
 }
 
 .s_p_left {
@@ -1541,11 +1571,11 @@ section {
 
 .bg {
     width: calc(100vw * 2833/ 1920);
+    height: calc(100vw * 2456/ 1920);
     z-index: 0;
     transform: translateX(-52%);
     margin-top: -42%;
     margin-left: 59.05%;
-    
   }
 
   .image {
@@ -1561,8 +1591,6 @@ section {
   .active {
     opacity: 1;
   }
-
-
 
   /*------ 섹션 s_chatting -------------------------------------------*/
 
@@ -1702,7 +1730,8 @@ section {
     
     80% {margin-top: calc(100vw * -800/ 1920);}
     95% {margin-top: calc(100vw * -800/ 1920);}
-    
+
+    99.999% {margin-top: calc(100vw * -1000/ 1920);}
     100% {margin-top: calc(100vw * -1000/ 1920);}
   }
   
