@@ -1001,17 +1001,16 @@ section {
 }
 #s4tt img{
     position: absolute;
-    width: calc(100vw * 330/ 1920);
-    height: calc(100vw * 640/ 1920);
+    width: calc(100vw * 322/ 1920);
+    height: calc(100vw * 660/ 1920);
 
-    top: 23%;
-    left: 60.3%;
-    transform: scale()
+    top: 22.4%;
+    left: 60.55%;
 }
 #s4tt iframe{
     border-radius: calc(100vw * 60 / 1920);
     width: calc(100vw * 414 / 1920); 
-    height:calc(100vw * 870 / 1920);
+    height:calc(100vw * 900 / 1920);
     overflow: hidden;
 
     -moz-transform: scale(0.7, 0.7);
